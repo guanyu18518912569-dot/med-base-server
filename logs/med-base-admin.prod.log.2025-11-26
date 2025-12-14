@@ -1,0 +1,387 @@
+2025-11-26T10:32:55.437+08:00  INFO 47572 --- [med-base-server] [restartedMain] m.base.server.MedBaseServerApplication   : Starting MedBaseServerApplication using Java 18.0.2 with PID 47572 (D:\code\base\server-ui\med-base-server\target\classes started by gy in D:\code\base\server-ui\med-base-server)
+2025-11-26T10:32:55.447+08:00  INFO 47572 --- [med-base-server] [restartedMain] m.base.server.MedBaseServerApplication   : The following 1 profile is active: "prod"
+2025-11-26T10:32:55.509+08:00  INFO 47572 --- [med-base-server] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-11-26T10:32:55.509+08:00  INFO 47572 --- [med-base-server] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-11-26T10:32:56.884+08:00  INFO 47572 --- [med-base-server] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 7000 (http)
+2025-11-26T10:32:56.902+08:00  INFO 47572 --- [med-base-server] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-11-26T10:32:56.902+08:00  INFO 47572 --- [med-base-server] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.48]
+2025-11-26T10:32:56.973+08:00  INFO 47572 --- [med-base-server] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-11-26T10:32:56.973+08:00  INFO 47572 --- [med-base-server] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1463 ms
+2025-11-26T10:32:57.724+08:00  WARN 47572 --- [med-base-server] [restartedMain] c.b.m.core.metadata.TableInfoHelper      : This primary key of "id" is primitive !不建议如此请使用包装类 in Class: "med.base.server.model.AuthAgent"
+2025-11-26T10:32:57.821+08:00  WARN 47572 --- [med-base-server] [restartedMain] c.b.m.core.metadata.TableInfoHelper      : This primary key of "id" is primitive !不建议如此请使用包装类 in Class: "med.base.server.model.AuthRole"
+2025-11-26T10:32:57.842+08:00  WARN 47572 --- [med-base-server] [restartedMain] c.b.m.core.metadata.TableInfoHelper      : This primary key of "id" is primitive !不建议如此请使用包装类 in Class: "med.base.server.model.AuthMenu"
+2025-11-26T10:32:58.112+08:00  INFO 47572 --- [med-base-server] [restartedMain] m.e.s.MybatisPlusApplicationContextAware : Register ApplicationContext instances org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@18237c0a
+2025-11-26T10:32:58.199+08:00  INFO 47572 --- [med-base-server] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2025-11-26T10:32:58.234+08:00  INFO 47572 --- [med-base-server] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 7000 (http) with context path '/'
+2025-11-26T10:32:58.242+08:00  INFO 47572 --- [med-base-server] [restartedMain] m.base.server.MedBaseServerApplication   : Started MedBaseServerApplication in 3.594 seconds (process running for 6.486)
+2025-11-26T10:36:00.391+08:00  INFO 47572 --- [med-base-server] [http-nio-7000-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-11-26T10:36:00.391+08:00  INFO 47572 --- [med-base-server] [http-nio-7000-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-11-26T10:36:00.393+08:00  INFO 47572 --- [med-base-server] [http-nio-7000-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2025-11-26T10:36:16.988+08:00  WARN 47572 --- [med-base-server] [http-nio-7000-exec-6] com.zaxxer.hikari.HikariConfig           : DataSourceHk - idleTimeout has been set but has no effect because the pool is operating as a fixed size pool.
+2025-11-26T10:36:16.988+08:00  INFO 47572 --- [med-base-server] [http-nio-7000-exec-6] com.zaxxer.hikari.HikariDataSource       : DataSourceHk - Starting...
+2025-11-26T10:36:17.523+08:00  INFO 47572 --- [med-base-server] [http-nio-7000-exec-6] com.zaxxer.hikari.pool.HikariPool        : DataSourceHk - Added connection com.mysql.cj.jdbc.ConnectionImpl@24428912
+2025-11-26T10:36:17.525+08:00  INFO 47572 --- [med-base-server] [http-nio-7000-exec-6] com.zaxxer.hikari.HikariDataSource       : DataSourceHk - Start completed.
+2025-11-26T10:48:35.186+08:00  INFO 47572 --- [med-base-server] [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 2 class path changes (2 additions, 0 deletions, 0 modifications)
+2025-11-26T10:48:35.205+08:00  INFO 47572 --- [med-base-server] [Thread-5] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-11-26T10:48:35.487+08:00  INFO 47572 --- [med-base-server] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-11-26T10:48:35.502+08:00  INFO 47572 --- [med-base-server] [Thread-5] com.zaxxer.hikari.HikariDataSource       : DataSourceHk - Shutdown initiated...
+2025-11-26T10:48:35.523+08:00  INFO 47572 --- [med-base-server] [Thread-5] com.zaxxer.hikari.HikariDataSource       : DataSourceHk - Shutdown completed.
+2025-11-26T10:48:35.832+08:00  INFO 47572 --- [med-base-server] [restartedMain] m.base.server.MedBaseServerApplication   : Starting MedBaseServerApplication using Java 18.0.2 with PID 47572 (D:\code\base\server-ui\med-base-server\target\classes started by gy in D:\code\base\server-ui\med-base-server)
+2025-11-26T10:48:35.832+08:00  INFO 47572 --- [med-base-server] [restartedMain] m.base.server.MedBaseServerApplication   : The following 1 profile is active: "prod"
+2025-11-26T10:48:36.734+08:00  INFO 47572 --- [med-base-server] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 7000 (http)
+2025-11-26T10:48:36.735+08:00  INFO 47572 --- [med-base-server] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-11-26T10:48:36.736+08:00  INFO 47572 --- [med-base-server] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.48]
+2025-11-26T10:48:36.821+08:00  INFO 47572 --- [med-base-server] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-11-26T10:48:36.821+08:00  INFO 47572 --- [med-base-server] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 985 ms
+2025-11-26T10:48:37.210+08:00  WARN 47572 --- [med-base-server] [restartedMain] c.b.m.core.metadata.TableInfoHelper      : This primary key of "id" is primitive !不建议如此请使用包装类 in Class: "med.base.server.model.AuthAgent"
+2025-11-26T10:48:37.251+08:00  WARN 47572 --- [med-base-server] [restartedMain] c.b.m.core.metadata.TableInfoHelper      : This primary key of "id" is primitive !不建议如此请使用包装类 in Class: "med.base.server.model.AuthRole"
+2025-11-26T10:48:37.275+08:00  WARN 47572 --- [med-base-server] [restartedMain] c.b.m.core.metadata.TableInfoHelper      : This primary key of "id" is primitive !不建议如此请使用包装类 in Class: "med.base.server.model.AuthMenu"
+2025-11-26T10:48:37.414+08:00  INFO 47572 --- [med-base-server] [restartedMain] m.e.s.MybatisPlusApplicationContextAware : Register ApplicationContext instances org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@278336e1
+2025-11-26T10:48:37.453+08:00  INFO 47572 --- [med-base-server] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2025-11-26T10:48:37.468+08:00  INFO 47572 --- [med-base-server] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 7000 (http) with context path '/'
+2025-11-26T10:48:37.473+08:00  INFO 47572 --- [med-base-server] [restartedMain] m.base.server.MedBaseServerApplication   : Started MedBaseServerApplication in 1.829 seconds (process running for 945.717)
+2025-11-26T10:48:37.476+08:00  INFO 47572 --- [med-base-server] [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2025-11-26T10:49:08.884+08:00  INFO 47572 --- [med-base-server] [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 2 class path changes (0 additions, 2 deletions, 0 modifications)
+2025-11-26T10:49:08.886+08:00  INFO 47572 --- [med-base-server] [Thread-7] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-11-26T10:49:08.987+08:00  INFO 47572 --- [med-base-server] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-11-26T10:49:09.077+08:00  INFO 47572 --- [med-base-server] [restartedMain] m.base.server.MedBaseServerApplication   : Starting MedBaseServerApplication using Java 18.0.2 with PID 47572 (D:\code\base\server-ui\med-base-server\target\classes started by gy in D:\code\base\server-ui\med-base-server)
+2025-11-26T10:49:09.077+08:00  INFO 47572 --- [med-base-server] [restartedMain] m.base.server.MedBaseServerApplication   : The following 1 profile is active: "prod"
+2025-11-26T10:49:09.377+08:00  INFO 47572 --- [med-base-server] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 7000 (http)
+2025-11-26T10:49:09.377+08:00  INFO 47572 --- [med-base-server] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-11-26T10:49:09.377+08:00  INFO 47572 --- [med-base-server] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.48]
+2025-11-26T10:49:09.421+08:00  INFO 47572 --- [med-base-server] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-11-26T10:49:09.422+08:00  INFO 47572 --- [med-base-server] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 342 ms
+2025-11-26T10:49:09.630+08:00  WARN 47572 --- [med-base-server] [restartedMain] c.b.m.core.metadata.TableInfoHelper      : This primary key of "id" is primitive !不建议如此请使用包装类 in Class: "med.base.server.model.AuthAgent"
+2025-11-26T10:49:09.650+08:00  WARN 47572 --- [med-base-server] [restartedMain] c.b.m.core.metadata.TableInfoHelper      : This primary key of "id" is primitive !不建议如此请使用包装类 in Class: "med.base.server.model.AuthRole"
+2025-11-26T10:49:09.671+08:00  WARN 47572 --- [med-base-server] [restartedMain] c.b.m.core.metadata.TableInfoHelper      : This primary key of "id" is primitive !不建议如此请使用包装类 in Class: "med.base.server.model.AuthMenu"
+2025-11-26T10:49:09.748+08:00  INFO 47572 --- [med-base-server] [restartedMain] m.e.s.MybatisPlusApplicationContextAware : Register ApplicationContext instances org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@114c5056
+2025-11-26T10:49:09.767+08:00  INFO 47572 --- [med-base-server] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2025-11-26T10:49:09.776+08:00  INFO 47572 --- [med-base-server] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 7000 (http) with context path '/'
+2025-11-26T10:49:09.780+08:00  INFO 47572 --- [med-base-server] [restartedMain] m.base.server.MedBaseServerApplication   : Started MedBaseServerApplication in 0.754 seconds (process running for 978.024)
+2025-11-26T10:49:09.782+08:00  INFO 47572 --- [med-base-server] [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2025-11-26T10:49:11.225+08:00  INFO 47572 --- [med-base-server] [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 2 class path changes (2 additions, 0 deletions, 0 modifications)
+2025-11-26T10:49:11.227+08:00  INFO 47572 --- [med-base-server] [Thread-11] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-11-26T10:49:11.356+08:00  INFO 47572 --- [med-base-server] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-11-26T10:49:11.456+08:00  INFO 47572 --- [med-base-server] [restartedMain] m.base.server.MedBaseServerApplication   : Starting MedBaseServerApplication using Java 18.0.2 with PID 47572 (D:\code\base\server-ui\med-base-server\target\classes started by gy in D:\code\base\server-ui\med-base-server)
+2025-11-26T10:49:11.457+08:00  INFO 47572 --- [med-base-server] [restartedMain] m.base.server.MedBaseServerApplication   : The following 1 profile is active: "prod"
+2025-11-26T10:49:11.805+08:00  INFO 47572 --- [med-base-server] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 7000 (http)
+2025-11-26T10:49:11.806+08:00  INFO 47572 --- [med-base-server] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-11-26T10:49:11.806+08:00  INFO 47572 --- [med-base-server] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.48]
+2025-11-26T10:49:11.855+08:00  INFO 47572 --- [med-base-server] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-11-26T10:49:11.856+08:00  INFO 47572 --- [med-base-server] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 396 ms
+2025-11-26T10:49:12.093+08:00  WARN 47572 --- [med-base-server] [restartedMain] c.b.m.core.metadata.TableInfoHelper      : This primary key of "id" is primitive !不建议如此请使用包装类 in Class: "med.base.server.model.AuthAgent"
+2025-11-26T10:49:12.117+08:00  WARN 47572 --- [med-base-server] [restartedMain] c.b.m.core.metadata.TableInfoHelper      : This primary key of "id" is primitive !不建议如此请使用包装类 in Class: "med.base.server.model.AuthRole"
+2025-11-26T10:49:12.137+08:00  WARN 47572 --- [med-base-server] [restartedMain] c.b.m.core.metadata.TableInfoHelper      : This primary key of "id" is primitive !不建议如此请使用包装类 in Class: "med.base.server.model.AuthMenu"
+2025-11-26T10:49:12.210+08:00  INFO 47572 --- [med-base-server] [restartedMain] m.e.s.MybatisPlusApplicationContextAware : Register ApplicationContext instances org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@297b7035
+2025-11-26T10:49:12.227+08:00  INFO 47572 --- [med-base-server] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2025-11-26T10:49:12.236+08:00  INFO 47572 --- [med-base-server] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 7000 (http) with context path '/'
+2025-11-26T10:49:12.240+08:00  INFO 47572 --- [med-base-server] [restartedMain] m.base.server.MedBaseServerApplication   : Started MedBaseServerApplication in 0.841 seconds (process running for 980.483)
+2025-11-26T10:49:12.241+08:00  INFO 47572 --- [med-base-server] [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2025-11-26T10:49:29.134+08:00  INFO 47572 --- [med-base-server] [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 2 class path changes (0 additions, 2 deletions, 0 modifications)
+2025-11-26T10:49:29.136+08:00  INFO 47572 --- [med-base-server] [Thread-15] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-11-26T10:49:29.261+08:00  INFO 47572 --- [med-base-server] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-11-26T10:49:29.356+08:00  INFO 47572 --- [med-base-server] [restartedMain] m.base.server.MedBaseServerApplication   : Starting MedBaseServerApplication using Java 18.0.2 with PID 47572 (D:\code\base\server-ui\med-base-server\target\classes started by gy in D:\code\base\server-ui\med-base-server)
+2025-11-26T10:49:29.357+08:00  INFO 47572 --- [med-base-server] [restartedMain] m.base.server.MedBaseServerApplication   : The following 1 profile is active: "prod"
+2025-11-26T10:49:29.657+08:00  INFO 47572 --- [med-base-server] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 7000 (http)
+2025-11-26T10:49:29.658+08:00  INFO 47572 --- [med-base-server] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-11-26T10:49:29.659+08:00  INFO 47572 --- [med-base-server] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.48]
+2025-11-26T10:49:29.704+08:00  INFO 47572 --- [med-base-server] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-11-26T10:49:29.705+08:00  INFO 47572 --- [med-base-server] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 346 ms
+2025-11-26T10:49:29.907+08:00  WARN 47572 --- [med-base-server] [restartedMain] c.b.m.core.metadata.TableInfoHelper      : This primary key of "id" is primitive !不建议如此请使用包装类 in Class: "med.base.server.model.AuthAgent"
+2025-11-26T10:49:29.929+08:00  WARN 47572 --- [med-base-server] [restartedMain] c.b.m.core.metadata.TableInfoHelper      : This primary key of "id" is primitive !不建议如此请使用包装类 in Class: "med.base.server.model.AuthRole"
+2025-11-26T10:49:29.944+08:00  WARN 47572 --- [med-base-server] [restartedMain] c.b.m.core.metadata.TableInfoHelper      : This primary key of "id" is primitive !不建议如此请使用包装类 in Class: "med.base.server.model.AuthMenu"
+2025-11-26T10:49:30.011+08:00  INFO 47572 --- [med-base-server] [restartedMain] m.e.s.MybatisPlusApplicationContextAware : Register ApplicationContext instances org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@ea74f7c
+2025-11-26T10:49:30.028+08:00  INFO 47572 --- [med-base-server] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2025-11-26T10:49:30.037+08:00  INFO 47572 --- [med-base-server] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 7000 (http) with context path '/'
+2025-11-26T10:49:30.042+08:00  INFO 47572 --- [med-base-server] [restartedMain] m.base.server.MedBaseServerApplication   : Started MedBaseServerApplication in 0.738 seconds (process running for 998.284)
+2025-11-26T10:49:30.043+08:00  INFO 47572 --- [med-base-server] [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2025-11-26T10:49:31.481+08:00  INFO 47572 --- [med-base-server] [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 2 class path changes (2 additions, 0 deletions, 0 modifications)
+2025-11-26T10:49:31.482+08:00  INFO 47572 --- [med-base-server] [Thread-19] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-11-26T10:49:31.608+08:00  INFO 47572 --- [med-base-server] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-11-26T10:49:31.716+08:00  INFO 47572 --- [med-base-server] [restartedMain] m.base.server.MedBaseServerApplication   : Starting MedBaseServerApplication using Java 18.0.2 with PID 47572 (D:\code\base\server-ui\med-base-server\target\classes started by gy in D:\code\base\server-ui\med-base-server)
+2025-11-26T10:49:31.716+08:00  INFO 47572 --- [med-base-server] [restartedMain] m.base.server.MedBaseServerApplication   : The following 1 profile is active: "prod"
+2025-11-26T10:49:32.085+08:00  INFO 47572 --- [med-base-server] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 7000 (http)
+2025-11-26T10:49:32.086+08:00  INFO 47572 --- [med-base-server] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-11-26T10:49:32.086+08:00  INFO 47572 --- [med-base-server] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.48]
+2025-11-26T10:49:32.196+08:00  INFO 47572 --- [med-base-server] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-11-26T10:49:32.196+08:00  INFO 47572 --- [med-base-server] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 477 ms
+2025-11-26T10:49:32.589+08:00  WARN 47572 --- [med-base-server] [restartedMain] c.b.m.core.metadata.TableInfoHelper      : This primary key of "id" is primitive !不建议如此请使用包装类 in Class: "med.base.server.model.AuthAgent"
+2025-11-26T10:49:32.622+08:00  WARN 47572 --- [med-base-server] [restartedMain] c.b.m.core.metadata.TableInfoHelper      : This primary key of "id" is primitive !不建议如此请使用包装类 in Class: "med.base.server.model.AuthRole"
+2025-11-26T10:49:32.646+08:00  WARN 47572 --- [med-base-server] [restartedMain] c.b.m.core.metadata.TableInfoHelper      : This primary key of "id" is primitive !不建议如此请使用包装类 in Class: "med.base.server.model.AuthMenu"
+2025-11-26T10:49:32.785+08:00  INFO 47572 --- [med-base-server] [restartedMain] m.e.s.MybatisPlusApplicationContextAware : Register ApplicationContext instances org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@78af9d05
+2025-11-26T10:49:32.814+08:00  INFO 47572 --- [med-base-server] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2025-11-26T10:49:32.831+08:00  INFO 47572 --- [med-base-server] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 7000 (http) with context path '/'
+2025-11-26T10:49:32.838+08:00  INFO 47572 --- [med-base-server] [restartedMain] m.base.server.MedBaseServerApplication   : Started MedBaseServerApplication in 1.181 seconds (process running for 1001.081)
+2025-11-26T10:49:32.839+08:00  INFO 47572 --- [med-base-server] [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2025-11-26T10:49:42.578+08:00  INFO 47572 --- [med-base-server] [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 2 class path changes (0 additions, 2 deletions, 0 modifications)
+2025-11-26T10:49:42.579+08:00  INFO 47572 --- [med-base-server] [Thread-23] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-11-26T10:49:42.701+08:00  INFO 47572 --- [med-base-server] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-11-26T10:49:42.793+08:00  INFO 47572 --- [med-base-server] [restartedMain] m.base.server.MedBaseServerApplication   : Starting MedBaseServerApplication using Java 18.0.2 with PID 47572 (D:\code\base\server-ui\med-base-server\target\classes started by gy in D:\code\base\server-ui\med-base-server)
+2025-11-26T10:49:42.793+08:00  INFO 47572 --- [med-base-server] [restartedMain] m.base.server.MedBaseServerApplication   : The following 1 profile is active: "prod"
+2025-11-26T10:49:43.065+08:00  INFO 47572 --- [med-base-server] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 7000 (http)
+2025-11-26T10:49:43.066+08:00  INFO 47572 --- [med-base-server] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-11-26T10:49:43.066+08:00  INFO 47572 --- [med-base-server] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.48]
+2025-11-26T10:49:43.109+08:00  INFO 47572 --- [med-base-server] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-11-26T10:49:43.109+08:00  INFO 47572 --- [med-base-server] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 313 ms
+2025-11-26T10:49:43.312+08:00  WARN 47572 --- [med-base-server] [restartedMain] c.b.m.core.metadata.TableInfoHelper      : This primary key of "id" is primitive !不建议如此请使用包装类 in Class: "med.base.server.model.AuthAgent"
+2025-11-26T10:49:43.332+08:00  WARN 47572 --- [med-base-server] [restartedMain] c.b.m.core.metadata.TableInfoHelper      : This primary key of "id" is primitive !不建议如此请使用包装类 in Class: "med.base.server.model.AuthRole"
+2025-11-26T10:49:43.348+08:00  WARN 47572 --- [med-base-server] [restartedMain] c.b.m.core.metadata.TableInfoHelper      : This primary key of "id" is primitive !不建议如此请使用包装类 in Class: "med.base.server.model.AuthMenu"
+2025-11-26T10:49:43.420+08:00  INFO 47572 --- [med-base-server] [restartedMain] m.e.s.MybatisPlusApplicationContextAware : Register ApplicationContext instances org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@135a15c6
+2025-11-26T10:49:43.439+08:00  INFO 47572 --- [med-base-server] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2025-11-26T10:49:43.448+08:00  INFO 47572 --- [med-base-server] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 7000 (http) with context path '/'
+2025-11-26T10:49:43.453+08:00  INFO 47572 --- [med-base-server] [restartedMain] m.base.server.MedBaseServerApplication   : Started MedBaseServerApplication in 0.71 seconds (process running for 1011.696)
+2025-11-26T10:49:43.454+08:00  INFO 47572 --- [med-base-server] [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2025-11-26T10:49:44.902+08:00  INFO 47572 --- [med-base-server] [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 2 class path changes (2 additions, 0 deletions, 0 modifications)
+2025-11-26T10:49:44.903+08:00  INFO 47572 --- [med-base-server] [Thread-27] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-11-26T10:49:45.031+08:00  INFO 47572 --- [med-base-server] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-11-26T10:49:45.133+08:00  INFO 47572 --- [med-base-server] [restartedMain] m.base.server.MedBaseServerApplication   : Starting MedBaseServerApplication using Java 18.0.2 with PID 47572 (D:\code\base\server-ui\med-base-server\target\classes started by gy in D:\code\base\server-ui\med-base-server)
+2025-11-26T10:49:45.133+08:00  INFO 47572 --- [med-base-server] [restartedMain] m.base.server.MedBaseServerApplication   : The following 1 profile is active: "prod"
+2025-11-26T10:49:45.438+08:00  INFO 47572 --- [med-base-server] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 7000 (http)
+2025-11-26T10:49:45.438+08:00  INFO 47572 --- [med-base-server] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-11-26T10:49:45.439+08:00  INFO 47572 --- [med-base-server] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.48]
+2025-11-26T10:49:45.479+08:00  INFO 47572 --- [med-base-server] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-11-26T10:49:45.479+08:00  INFO 47572 --- [med-base-server] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 343 ms
+2025-11-26T10:49:45.684+08:00  WARN 47572 --- [med-base-server] [restartedMain] c.b.m.core.metadata.TableInfoHelper      : This primary key of "id" is primitive !不建议如此请使用包装类 in Class: "med.base.server.model.AuthAgent"
+2025-11-26T10:49:45.705+08:00  WARN 47572 --- [med-base-server] [restartedMain] c.b.m.core.metadata.TableInfoHelper      : This primary key of "id" is primitive !不建议如此请使用包装类 in Class: "med.base.server.model.AuthRole"
+2025-11-26T10:49:45.717+08:00  WARN 47572 --- [med-base-server] [restartedMain] c.b.m.core.metadata.TableInfoHelper      : This primary key of "id" is primitive !不建议如此请使用包装类 in Class: "med.base.server.model.AuthMenu"
+2025-11-26T10:49:45.840+08:00  INFO 47572 --- [med-base-server] [restartedMain] m.e.s.MybatisPlusApplicationContextAware : Register ApplicationContext instances org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@22a35791
+2025-11-26T10:49:45.870+08:00  INFO 47572 --- [med-base-server] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2025-11-26T10:49:45.885+08:00  INFO 47572 --- [med-base-server] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 7000 (http) with context path '/'
+2025-11-26T10:49:45.891+08:00  INFO 47572 --- [med-base-server] [restartedMain] m.base.server.MedBaseServerApplication   : Started MedBaseServerApplication in 0.814 seconds (process running for 1014.135)
+2025-11-26T10:49:45.894+08:00  INFO 47572 --- [med-base-server] [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2025-11-26T10:49:55.604+08:00  INFO 47572 --- [med-base-server] [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 2 class path changes (0 additions, 2 deletions, 0 modifications)
+2025-11-26T10:49:55.606+08:00  INFO 47572 --- [med-base-server] [Thread-31] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-11-26T10:49:55.731+08:00  INFO 47572 --- [med-base-server] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-11-26T10:49:55.826+08:00  INFO 47572 --- [med-base-server] [restartedMain] m.base.server.MedBaseServerApplication   : Starting MedBaseServerApplication using Java 18.0.2 with PID 47572 (D:\code\base\server-ui\med-base-server\target\classes started by gy in D:\code\base\server-ui\med-base-server)
+2025-11-26T10:49:55.826+08:00  INFO 47572 --- [med-base-server] [restartedMain] m.base.server.MedBaseServerApplication   : The following 1 profile is active: "prod"
+2025-11-26T10:49:56.103+08:00  INFO 47572 --- [med-base-server] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 7000 (http)
+2025-11-26T10:49:56.104+08:00  INFO 47572 --- [med-base-server] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-11-26T10:49:56.104+08:00  INFO 47572 --- [med-base-server] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.48]
+2025-11-26T10:49:56.147+08:00  INFO 47572 --- [med-base-server] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-11-26T10:49:56.147+08:00  INFO 47572 --- [med-base-server] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 318 ms
+2025-11-26T10:49:56.338+08:00  WARN 47572 --- [med-base-server] [restartedMain] c.b.m.core.metadata.TableInfoHelper      : This primary key of "id" is primitive !不建议如此请使用包装类 in Class: "med.base.server.model.AuthAgent"
+2025-11-26T10:49:56.356+08:00  WARN 47572 --- [med-base-server] [restartedMain] c.b.m.core.metadata.TableInfoHelper      : This primary key of "id" is primitive !不建议如此请使用包装类 in Class: "med.base.server.model.AuthRole"
+2025-11-26T10:49:56.369+08:00  WARN 47572 --- [med-base-server] [restartedMain] c.b.m.core.metadata.TableInfoHelper      : This primary key of "id" is primitive !不建议如此请使用包装类 in Class: "med.base.server.model.AuthMenu"
+2025-11-26T10:49:56.444+08:00  INFO 47572 --- [med-base-server] [restartedMain] m.e.s.MybatisPlusApplicationContextAware : Register ApplicationContext instances org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@15f56bb8
+2025-11-26T10:49:56.461+08:00  INFO 47572 --- [med-base-server] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2025-11-26T10:49:56.470+08:00  INFO 47572 --- [med-base-server] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 7000 (http) with context path '/'
+2025-11-26T10:49:56.474+08:00  INFO 47572 --- [med-base-server] [restartedMain] m.base.server.MedBaseServerApplication   : Started MedBaseServerApplication in 0.7 seconds (process running for 1024.718)
+2025-11-26T10:49:56.475+08:00  INFO 47572 --- [med-base-server] [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2025-11-26T10:49:57.920+08:00  INFO 47572 --- [med-base-server] [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 2 class path changes (2 additions, 0 deletions, 0 modifications)
+2025-11-26T10:49:57.921+08:00  INFO 47572 --- [med-base-server] [Thread-35] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-11-26T10:49:58.044+08:00  INFO 47572 --- [med-base-server] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-11-26T10:49:58.131+08:00  INFO 47572 --- [med-base-server] [restartedMain] m.base.server.MedBaseServerApplication   : Starting MedBaseServerApplication using Java 18.0.2 with PID 47572 (D:\code\base\server-ui\med-base-server\target\classes started by gy in D:\code\base\server-ui\med-base-server)
+2025-11-26T10:49:58.132+08:00  INFO 47572 --- [med-base-server] [restartedMain] m.base.server.MedBaseServerApplication   : The following 1 profile is active: "prod"
+2025-11-26T10:49:58.424+08:00  INFO 47572 --- [med-base-server] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 7000 (http)
+2025-11-26T10:49:58.424+08:00  INFO 47572 --- [med-base-server] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-11-26T10:49:58.424+08:00  INFO 47572 --- [med-base-server] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.48]
+2025-11-26T10:49:58.465+08:00  INFO 47572 --- [med-base-server] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-11-26T10:49:58.465+08:00  INFO 47572 --- [med-base-server] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 331 ms
+2025-11-26T10:49:58.839+08:00  WARN 47572 --- [med-base-server] [restartedMain] c.b.m.core.metadata.TableInfoHelper      : This primary key of "id" is primitive !不建议如此请使用包装类 in Class: "med.base.server.model.AuthAgent"
+2025-11-26T10:49:58.864+08:00  WARN 47572 --- [med-base-server] [restartedMain] c.b.m.core.metadata.TableInfoHelper      : This primary key of "id" is primitive !不建议如此请使用包装类 in Class: "med.base.server.model.AuthRole"
+2025-11-26T10:49:58.886+08:00  WARN 47572 --- [med-base-server] [restartedMain] c.b.m.core.metadata.TableInfoHelper      : This primary key of "id" is primitive !不建议如此请使用包装类 in Class: "med.base.server.model.AuthMenu"
+2025-11-26T10:49:59.007+08:00  INFO 47572 --- [med-base-server] [restartedMain] m.e.s.MybatisPlusApplicationContextAware : Register ApplicationContext instances org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@7e5fb4ef
+2025-11-26T10:49:59.035+08:00  INFO 47572 --- [med-base-server] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2025-11-26T10:49:59.047+08:00  INFO 47572 --- [med-base-server] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 7000 (http) with context path '/'
+2025-11-26T10:49:59.053+08:00  INFO 47572 --- [med-base-server] [restartedMain] m.base.server.MedBaseServerApplication   : Started MedBaseServerApplication in 0.97 seconds (process running for 1027.296)
+2025-11-26T10:49:59.054+08:00  INFO 47572 --- [med-base-server] [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2025-11-26T10:50:43.870+08:00  INFO 47572 --- [med-base-server] [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 2 class path changes (0 additions, 2 deletions, 0 modifications)
+2025-11-26T10:50:43.871+08:00  INFO 47572 --- [med-base-server] [Thread-39] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-11-26T10:50:43.964+08:00  INFO 47572 --- [med-base-server] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-11-26T10:50:44.037+08:00  INFO 47572 --- [med-base-server] [restartedMain] m.base.server.MedBaseServerApplication   : Starting MedBaseServerApplication using Java 18.0.2 with PID 47572 (D:\code\base\server-ui\med-base-server\target\classes started by gy in D:\code\base\server-ui\med-base-server)
+2025-11-26T10:50:44.037+08:00  INFO 47572 --- [med-base-server] [restartedMain] m.base.server.MedBaseServerApplication   : The following 1 profile is active: "prod"
+2025-11-26T10:50:44.241+08:00  INFO 47572 --- [med-base-server] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 7000 (http)
+2025-11-26T10:50:44.241+08:00  INFO 47572 --- [med-base-server] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-11-26T10:50:44.241+08:00  INFO 47572 --- [med-base-server] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.48]
+2025-11-26T10:50:44.270+08:00  INFO 47572 --- [med-base-server] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-11-26T10:50:44.270+08:00  INFO 47572 --- [med-base-server] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 231 ms
+2025-11-26T10:50:44.417+08:00  WARN 47572 --- [med-base-server] [restartedMain] c.b.m.core.metadata.TableInfoHelper      : This primary key of "id" is primitive !不建议如此请使用包装类 in Class: "med.base.server.model.AuthAgent"
+2025-11-26T10:50:44.430+08:00  WARN 47572 --- [med-base-server] [restartedMain] c.b.m.core.metadata.TableInfoHelper      : This primary key of "id" is primitive !不建议如此请使用包装类 in Class: "med.base.server.model.AuthRole"
+2025-11-26T10:50:44.442+08:00  WARN 47572 --- [med-base-server] [restartedMain] c.b.m.core.metadata.TableInfoHelper      : This primary key of "id" is primitive !不建议如此请使用包装类 in Class: "med.base.server.model.AuthMenu"
+2025-11-26T10:50:44.494+08:00  INFO 47572 --- [med-base-server] [restartedMain] m.e.s.MybatisPlusApplicationContextAware : Register ApplicationContext instances org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@35c011ee
+2025-11-26T10:50:44.505+08:00  INFO 47572 --- [med-base-server] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2025-11-26T10:50:44.512+08:00  INFO 47572 --- [med-base-server] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 7000 (http) with context path '/'
+2025-11-26T10:50:44.514+08:00  INFO 47572 --- [med-base-server] [restartedMain] m.base.server.MedBaseServerApplication   : Started MedBaseServerApplication in 0.516 seconds (process running for 1072.757)
+2025-11-26T10:50:44.515+08:00  INFO 47572 --- [med-base-server] [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2025-11-26T10:50:45.956+08:00  INFO 47572 --- [med-base-server] [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 2 class path changes (2 additions, 0 deletions, 0 modifications)
+2025-11-26T10:50:45.957+08:00  INFO 47572 --- [med-base-server] [Thread-43] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-11-26T10:50:46.037+08:00  INFO 47572 --- [med-base-server] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-11-26T10:50:46.104+08:00  INFO 47572 --- [med-base-server] [restartedMain] m.base.server.MedBaseServerApplication   : Starting MedBaseServerApplication using Java 18.0.2 with PID 47572 (D:\code\base\server-ui\med-base-server\target\classes started by gy in D:\code\base\server-ui\med-base-server)
+2025-11-26T10:50:46.104+08:00  INFO 47572 --- [med-base-server] [restartedMain] m.base.server.MedBaseServerApplication   : The following 1 profile is active: "prod"
+2025-11-26T10:50:46.290+08:00  INFO 47572 --- [med-base-server] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 7000 (http)
+2025-11-26T10:50:46.290+08:00  INFO 47572 --- [med-base-server] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-11-26T10:50:46.290+08:00  INFO 47572 --- [med-base-server] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.48]
+2025-11-26T10:50:46.316+08:00  INFO 47572 --- [med-base-server] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-11-26T10:50:46.316+08:00  INFO 47572 --- [med-base-server] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 209 ms
+2025-11-26T10:50:46.443+08:00  WARN 47572 --- [med-base-server] [restartedMain] c.b.m.core.metadata.TableInfoHelper      : This primary key of "id" is primitive !不建议如此请使用包装类 in Class: "med.base.server.model.AuthAgent"
+2025-11-26T10:50:46.452+08:00  WARN 47572 --- [med-base-server] [restartedMain] c.b.m.core.metadata.TableInfoHelper      : This primary key of "id" is primitive !不建议如此请使用包装类 in Class: "med.base.server.model.AuthRole"
+2025-11-26T10:50:46.464+08:00  WARN 47572 --- [med-base-server] [restartedMain] c.b.m.core.metadata.TableInfoHelper      : This primary key of "id" is primitive !不建议如此请使用包装类 in Class: "med.base.server.model.AuthMenu"
+2025-11-26T10:50:46.505+08:00  INFO 47572 --- [med-base-server] [restartedMain] m.e.s.MybatisPlusApplicationContextAware : Register ApplicationContext instances org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@6018951e
+2025-11-26T10:50:46.516+08:00  INFO 47572 --- [med-base-server] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2025-11-26T10:50:46.522+08:00  INFO 47572 --- [med-base-server] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 7000 (http) with context path '/'
+2025-11-26T10:50:46.525+08:00  INFO 47572 --- [med-base-server] [restartedMain] m.base.server.MedBaseServerApplication   : Started MedBaseServerApplication in 0.456 seconds (process running for 1074.768)
+2025-11-26T10:50:46.526+08:00  INFO 47572 --- [med-base-server] [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2025-11-26T10:50:56.307+08:00  INFO 47572 --- [med-base-server] [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 2 class path changes (0 additions, 2 deletions, 0 modifications)
+2025-11-26T10:50:56.308+08:00  INFO 47572 --- [med-base-server] [Thread-47] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-11-26T10:50:56.453+08:00  INFO 47572 --- [med-base-server] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-11-26T10:50:56.564+08:00  INFO 47572 --- [med-base-server] [restartedMain] m.base.server.MedBaseServerApplication   : Starting MedBaseServerApplication using Java 18.0.2 with PID 47572 (D:\code\base\server-ui\med-base-server\target\classes started by gy in D:\code\base\server-ui\med-base-server)
+2025-11-26T10:50:56.564+08:00  INFO 47572 --- [med-base-server] [restartedMain] m.base.server.MedBaseServerApplication   : The following 1 profile is active: "prod"
+2025-11-26T10:50:56.890+08:00  INFO 47572 --- [med-base-server] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 7000 (http)
+2025-11-26T10:50:56.891+08:00  INFO 47572 --- [med-base-server] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-11-26T10:50:56.891+08:00  INFO 47572 --- [med-base-server] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.48]
+2025-11-26T10:50:56.941+08:00  INFO 47572 --- [med-base-server] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-11-26T10:50:56.941+08:00  INFO 47572 --- [med-base-server] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 373 ms
+2025-11-26T10:50:57.161+08:00  WARN 47572 --- [med-base-server] [restartedMain] c.b.m.core.metadata.TableInfoHelper      : This primary key of "id" is primitive !不建议如此请使用包装类 in Class: "med.base.server.model.AuthAgent"
+2025-11-26T10:50:57.175+08:00  WARN 47572 --- [med-base-server] [restartedMain] c.b.m.core.metadata.TableInfoHelper      : This primary key of "id" is primitive !不建议如此请使用包装类 in Class: "med.base.server.model.AuthRole"
+2025-11-26T10:50:57.191+08:00  WARN 47572 --- [med-base-server] [restartedMain] c.b.m.core.metadata.TableInfoHelper      : This primary key of "id" is primitive !不建议如此请使用包装类 in Class: "med.base.server.model.AuthMenu"
+2025-11-26T10:50:57.263+08:00  INFO 47572 --- [med-base-server] [restartedMain] m.e.s.MybatisPlusApplicationContextAware : Register ApplicationContext instances org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@2126b267
+2025-11-26T10:50:57.279+08:00  INFO 47572 --- [med-base-server] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2025-11-26T10:50:57.287+08:00  INFO 47572 --- [med-base-server] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 7000 (http) with context path '/'
+2025-11-26T10:50:57.291+08:00  INFO 47572 --- [med-base-server] [restartedMain] m.base.server.MedBaseServerApplication   : Started MedBaseServerApplication in 0.791 seconds (process running for 1085.535)
+2025-11-26T10:50:57.292+08:00  INFO 47572 --- [med-base-server] [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2025-11-26T10:50:59.776+08:00  INFO 47572 --- [med-base-server] [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 2 class path changes (2 additions, 0 deletions, 0 modifications)
+2025-11-26T10:50:59.778+08:00  INFO 47572 --- [med-base-server] [Thread-51] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-11-26T10:50:59.976+08:00  INFO 47572 --- [med-base-server] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-11-26T10:51:00.140+08:00  INFO 47572 --- [med-base-server] [restartedMain] m.base.server.MedBaseServerApplication   : Starting MedBaseServerApplication using Java 18.0.2 with PID 47572 (D:\code\base\server-ui\med-base-server\target\classes started by gy in D:\code\base\server-ui\med-base-server)
+2025-11-26T10:51:00.140+08:00  INFO 47572 --- [med-base-server] [restartedMain] m.base.server.MedBaseServerApplication   : The following 1 profile is active: "prod"
+2025-11-26T10:51:00.620+08:00  INFO 47572 --- [med-base-server] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 7000 (http)
+2025-11-26T10:51:00.621+08:00  INFO 47572 --- [med-base-server] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-11-26T10:51:00.621+08:00  INFO 47572 --- [med-base-server] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.48]
+2025-11-26T10:51:00.662+08:00  INFO 47572 --- [med-base-server] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-11-26T10:51:00.663+08:00  INFO 47572 --- [med-base-server] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 517 ms
+2025-11-26T10:51:01.014+08:00  WARN 47572 --- [med-base-server] [restartedMain] c.b.m.core.metadata.TableInfoHelper      : This primary key of "id" is primitive !不建议如此请使用包装类 in Class: "med.base.server.model.AuthAgent"
+2025-11-26T10:51:01.039+08:00  WARN 47572 --- [med-base-server] [restartedMain] c.b.m.core.metadata.TableInfoHelper      : This primary key of "id" is primitive !不建议如此请使用包装类 in Class: "med.base.server.model.AuthRole"
+2025-11-26T10:51:01.058+08:00  WARN 47572 --- [med-base-server] [restartedMain] c.b.m.core.metadata.TableInfoHelper      : This primary key of "id" is primitive !不建议如此请使用包装类 in Class: "med.base.server.model.AuthMenu"
+2025-11-26T10:51:01.170+08:00  INFO 47572 --- [med-base-server] [restartedMain] m.e.s.MybatisPlusApplicationContextAware : Register ApplicationContext instances org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@2f653234
+2025-11-26T10:51:01.197+08:00  INFO 47572 --- [med-base-server] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2025-11-26T10:51:01.215+08:00  INFO 47572 --- [med-base-server] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 7000 (http) with context path '/'
+2025-11-26T10:51:01.221+08:00  INFO 47572 --- [med-base-server] [restartedMain] m.base.server.MedBaseServerApplication   : Started MedBaseServerApplication in 1.172 seconds (process running for 1089.465)
+2025-11-26T10:51:01.222+08:00  INFO 47572 --- [med-base-server] [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2025-11-26T10:51:21.228+08:00  INFO 47572 --- [med-base-server] [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 2 class path changes (0 additions, 2 deletions, 0 modifications)
+2025-11-26T10:51:21.230+08:00  INFO 47572 --- [med-base-server] [Thread-55] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-11-26T10:51:21.420+08:00  INFO 47572 --- [med-base-server] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-11-26T10:51:21.605+08:00  INFO 47572 --- [med-base-server] [restartedMain] m.base.server.MedBaseServerApplication   : Starting MedBaseServerApplication using Java 18.0.2 with PID 47572 (D:\code\base\server-ui\med-base-server\target\classes started by gy in D:\code\base\server-ui\med-base-server)
+2025-11-26T10:51:21.606+08:00  INFO 47572 --- [med-base-server] [restartedMain] m.base.server.MedBaseServerApplication   : The following 1 profile is active: "prod"
+2025-11-26T10:51:22.108+08:00  INFO 47572 --- [med-base-server] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 7000 (http)
+2025-11-26T10:51:22.108+08:00  INFO 47572 --- [med-base-server] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-11-26T10:51:22.109+08:00  INFO 47572 --- [med-base-server] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.48]
+2025-11-26T10:51:22.166+08:00  INFO 47572 --- [med-base-server] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-11-26T10:51:22.166+08:00  INFO 47572 --- [med-base-server] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 555 ms
+2025-11-26T10:51:22.420+08:00  WARN 47572 --- [med-base-server] [restartedMain] c.b.m.core.metadata.TableInfoHelper      : This primary key of "id" is primitive !不建议如此请使用包装类 in Class: "med.base.server.model.AuthAgent"
+2025-11-26T10:51:22.438+08:00  WARN 47572 --- [med-base-server] [restartedMain] c.b.m.core.metadata.TableInfoHelper      : This primary key of "id" is primitive !不建议如此请使用包装类 in Class: "med.base.server.model.AuthRole"
+2025-11-26T10:51:22.460+08:00  WARN 47572 --- [med-base-server] [restartedMain] c.b.m.core.metadata.TableInfoHelper      : This primary key of "id" is primitive !不建议如此请使用包装类 in Class: "med.base.server.model.AuthMenu"
+2025-11-26T10:51:22.537+08:00  INFO 47572 --- [med-base-server] [restartedMain] m.e.s.MybatisPlusApplicationContextAware : Register ApplicationContext instances org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@59e460aa
+2025-11-26T10:51:22.557+08:00  INFO 47572 --- [med-base-server] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2025-11-26T10:51:22.566+08:00  INFO 47572 --- [med-base-server] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 7000 (http) with context path '/'
+2025-11-26T10:51:22.571+08:00  INFO 47572 --- [med-base-server] [restartedMain] m.base.server.MedBaseServerApplication   : Started MedBaseServerApplication in 1.076 seconds (process running for 1110.814)
+2025-11-26T10:51:22.572+08:00  INFO 47572 --- [med-base-server] [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2025-11-26T10:51:25.098+08:00  INFO 47572 --- [med-base-server] [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 2 class path changes (2 additions, 0 deletions, 0 modifications)
+2025-11-26T10:51:25.099+08:00  INFO 47572 --- [med-base-server] [Thread-59] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-11-26T10:51:25.337+08:00  INFO 47572 --- [med-base-server] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-11-26T10:51:25.471+08:00  INFO 47572 --- [med-base-server] [restartedMain] m.base.server.MedBaseServerApplication   : Starting MedBaseServerApplication using Java 18.0.2 with PID 47572 (D:\code\base\server-ui\med-base-server\target\classes started by gy in D:\code\base\server-ui\med-base-server)
+2025-11-26T10:51:25.471+08:00  INFO 47572 --- [med-base-server] [restartedMain] m.base.server.MedBaseServerApplication   : The following 1 profile is active: "prod"
+2025-11-26T10:51:25.951+08:00  INFO 47572 --- [med-base-server] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 7000 (http)
+2025-11-26T10:51:25.952+08:00  INFO 47572 --- [med-base-server] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-11-26T10:51:25.952+08:00  INFO 47572 --- [med-base-server] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.48]
+2025-11-26T10:51:26.023+08:00  INFO 47572 --- [med-base-server] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-11-26T10:51:26.023+08:00  INFO 47572 --- [med-base-server] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 546 ms
+2025-11-26T10:51:26.370+08:00  WARN 47572 --- [med-base-server] [restartedMain] c.b.m.core.metadata.TableInfoHelper      : This primary key of "id" is primitive !不建议如此请使用包装类 in Class: "med.base.server.model.AuthAgent"
+2025-11-26T10:51:26.389+08:00  WARN 47572 --- [med-base-server] [restartedMain] c.b.m.core.metadata.TableInfoHelper      : This primary key of "id" is primitive !不建议如此请使用包装类 in Class: "med.base.server.model.AuthRole"
+2025-11-26T10:51:26.411+08:00  WARN 47572 --- [med-base-server] [restartedMain] c.b.m.core.metadata.TableInfoHelper      : This primary key of "id" is primitive !不建议如此请使用包装类 in Class: "med.base.server.model.AuthMenu"
+2025-11-26T10:51:26.498+08:00  INFO 47572 --- [med-base-server] [restartedMain] m.e.s.MybatisPlusApplicationContextAware : Register ApplicationContext instances org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@2abbcc68
+2025-11-26T10:51:26.515+08:00  INFO 47572 --- [med-base-server] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2025-11-26T10:51:26.525+08:00  INFO 47572 --- [med-base-server] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 7000 (http) with context path '/'
+2025-11-26T10:51:26.530+08:00  INFO 47572 --- [med-base-server] [restartedMain] m.base.server.MedBaseServerApplication   : Started MedBaseServerApplication in 1.123 seconds (process running for 1114.773)
+2025-11-26T10:51:26.530+08:00  INFO 47572 --- [med-base-server] [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2025-11-26T10:55:14.412+08:00  INFO 47572 --- [med-base-server] [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 2 class path changes (0 additions, 2 deletions, 0 modifications)
+2025-11-26T10:55:14.413+08:00  INFO 47572 --- [med-base-server] [Thread-63] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-11-26T10:55:14.503+08:00  INFO 47572 --- [med-base-server] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-11-26T10:55:14.576+08:00  INFO 47572 --- [med-base-server] [restartedMain] m.base.server.MedBaseServerApplication   : Starting MedBaseServerApplication using Java 18.0.2 with PID 47572 (D:\code\base\server-ui\med-base-server\target\classes started by gy in D:\code\base\server-ui\med-base-server)
+2025-11-26T10:55:14.576+08:00  INFO 47572 --- [med-base-server] [restartedMain] m.base.server.MedBaseServerApplication   : The following 1 profile is active: "prod"
+2025-11-26T10:55:14.798+08:00  INFO 47572 --- [med-base-server] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 7000 (http)
+2025-11-26T10:55:14.798+08:00  INFO 47572 --- [med-base-server] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-11-26T10:55:14.799+08:00  INFO 47572 --- [med-base-server] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.48]
+2025-11-26T10:55:14.829+08:00  INFO 47572 --- [med-base-server] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-11-26T10:55:14.829+08:00  INFO 47572 --- [med-base-server] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 251 ms
+2025-11-26T10:55:14.979+08:00  WARN 47572 --- [med-base-server] [restartedMain] c.b.m.core.metadata.TableInfoHelper      : This primary key of "id" is primitive !不建议如此请使用包装类 in Class: "med.base.server.model.AuthAgent"
+2025-11-26T10:55:14.990+08:00  WARN 47572 --- [med-base-server] [restartedMain] c.b.m.core.metadata.TableInfoHelper      : This primary key of "id" is primitive !不建议如此请使用包装类 in Class: "med.base.server.model.AuthRole"
+2025-11-26T10:55:15.003+08:00  WARN 47572 --- [med-base-server] [restartedMain] c.b.m.core.metadata.TableInfoHelper      : This primary key of "id" is primitive !不建议如此请使用包装类 in Class: "med.base.server.model.AuthMenu"
+2025-11-26T10:55:15.050+08:00  INFO 47572 --- [med-base-server] [restartedMain] m.e.s.MybatisPlusApplicationContextAware : Register ApplicationContext instances org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@7ae572ec
+2025-11-26T10:55:15.062+08:00  INFO 47572 --- [med-base-server] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2025-11-26T10:55:15.070+08:00  INFO 47572 --- [med-base-server] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 7000 (http) with context path '/'
+2025-11-26T10:55:15.073+08:00  INFO 47572 --- [med-base-server] [restartedMain] m.base.server.MedBaseServerApplication   : Started MedBaseServerApplication in 0.532 seconds (process running for 1343.316)
+2025-11-26T10:55:15.074+08:00  INFO 47572 --- [med-base-server] [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2025-11-26T10:55:16.521+08:00  INFO 47572 --- [med-base-server] [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 2 class path changes (2 additions, 0 deletions, 0 modifications)
+2025-11-26T10:55:16.521+08:00  INFO 47572 --- [med-base-server] [Thread-67] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-11-26T10:55:16.601+08:00  INFO 47572 --- [med-base-server] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-11-26T10:55:16.670+08:00  INFO 47572 --- [med-base-server] [restartedMain] m.base.server.MedBaseServerApplication   : Starting MedBaseServerApplication using Java 18.0.2 with PID 47572 (D:\code\base\server-ui\med-base-server\target\classes started by gy in D:\code\base\server-ui\med-base-server)
+2025-11-26T10:55:16.670+08:00  INFO 47572 --- [med-base-server] [restartedMain] m.base.server.MedBaseServerApplication   : The following 1 profile is active: "prod"
+2025-11-26T10:55:16.854+08:00  INFO 47572 --- [med-base-server] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 7000 (http)
+2025-11-26T10:55:16.854+08:00  INFO 47572 --- [med-base-server] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-11-26T10:55:16.854+08:00  INFO 47572 --- [med-base-server] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.48]
+2025-11-26T10:55:16.881+08:00  INFO 47572 --- [med-base-server] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-11-26T10:55:16.881+08:00  INFO 47572 --- [med-base-server] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 209 ms
+2025-11-26T10:55:17.007+08:00  WARN 47572 --- [med-base-server] [restartedMain] c.b.m.core.metadata.TableInfoHelper      : This primary key of "id" is primitive !不建议如此请使用包装类 in Class: "med.base.server.model.AuthAgent"
+2025-11-26T10:55:17.022+08:00  WARN 47572 --- [med-base-server] [restartedMain] c.b.m.core.metadata.TableInfoHelper      : This primary key of "id" is primitive !不建议如此请使用包装类 in Class: "med.base.server.model.AuthRole"
+2025-11-26T10:55:17.034+08:00  WARN 47572 --- [med-base-server] [restartedMain] c.b.m.core.metadata.TableInfoHelper      : This primary key of "id" is primitive !不建议如此请使用包装类 in Class: "med.base.server.model.AuthMenu"
+2025-11-26T10:55:17.075+08:00  INFO 47572 --- [med-base-server] [restartedMain] m.e.s.MybatisPlusApplicationContextAware : Register ApplicationContext instances org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@33b74522
+2025-11-26T10:55:17.087+08:00  INFO 47572 --- [med-base-server] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2025-11-26T10:55:17.092+08:00  INFO 47572 --- [med-base-server] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 7000 (http) with context path '/'
+2025-11-26T10:55:17.095+08:00  INFO 47572 --- [med-base-server] [restartedMain] m.base.server.MedBaseServerApplication   : Started MedBaseServerApplication in 0.455 seconds (process running for 1345.338)
+2025-11-26T10:55:17.096+08:00  INFO 47572 --- [med-base-server] [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2025-11-26T11:04:08.316+08:00  INFO 47572 --- [med-base-server] [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 2 class path changes (0 additions, 2 deletions, 0 modifications)
+2025-11-26T11:04:08.318+08:00  INFO 47572 --- [med-base-server] [Thread-71] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-11-26T11:04:08.422+08:00  INFO 47572 --- [med-base-server] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-11-26T11:04:08.509+08:00  INFO 47572 --- [med-base-server] [restartedMain] m.base.server.MedBaseServerApplication   : Starting MedBaseServerApplication using Java 18.0.2 with PID 47572 (D:\code\base\server-ui\med-base-server\target\classes started by gy in D:\code\base\server-ui\med-base-server)
+2025-11-26T11:04:08.509+08:00  INFO 47572 --- [med-base-server] [restartedMain] m.base.server.MedBaseServerApplication   : The following 1 profile is active: "prod"
+2025-11-26T11:04:08.752+08:00  INFO 47572 --- [med-base-server] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 7000 (http)
+2025-11-26T11:04:08.752+08:00  INFO 47572 --- [med-base-server] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-11-26T11:04:08.753+08:00  INFO 47572 --- [med-base-server] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.48]
+2025-11-26T11:04:08.790+08:00  INFO 47572 --- [med-base-server] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-11-26T11:04:08.791+08:00  INFO 47572 --- [med-base-server] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 280 ms
+2025-11-26T11:04:08.962+08:00  WARN 47572 --- [med-base-server] [restartedMain] c.b.m.core.metadata.TableInfoHelper      : This primary key of "id" is primitive !不建议如此请使用包装类 in Class: "med.base.server.model.AuthAgent"
+2025-11-26T11:04:08.971+08:00  WARN 47572 --- [med-base-server] [restartedMain] c.b.m.core.metadata.TableInfoHelper      : This primary key of "id" is primitive !不建议如此请使用包装类 in Class: "med.base.server.model.AuthRole"
+2025-11-26T11:04:08.980+08:00  WARN 47572 --- [med-base-server] [restartedMain] c.b.m.core.metadata.TableInfoHelper      : This primary key of "id" is primitive !不建议如此请使用包装类 in Class: "med.base.server.model.AuthMenu"
+2025-11-26T11:04:09.025+08:00  INFO 47572 --- [med-base-server] [restartedMain] m.e.s.MybatisPlusApplicationContextAware : Register ApplicationContext instances org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@29702123
+2025-11-26T11:04:09.036+08:00  INFO 47572 --- [med-base-server] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2025-11-26T11:04:09.040+08:00  INFO 47572 --- [med-base-server] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 7000 (http) with context path '/'
+2025-11-26T11:04:09.043+08:00  INFO 47572 --- [med-base-server] [restartedMain] m.base.server.MedBaseServerApplication   : Started MedBaseServerApplication in 0.576 seconds (process running for 1877.287)
+2025-11-26T11:04:09.044+08:00  INFO 47572 --- [med-base-server] [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2025-11-26T11:04:10.482+08:00  INFO 47572 --- [med-base-server] [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 2 class path changes (2 additions, 0 deletions, 0 modifications)
+2025-11-26T11:04:10.483+08:00  INFO 47572 --- [med-base-server] [Thread-75] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-11-26T11:04:10.569+08:00  INFO 47572 --- [med-base-server] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-11-26T11:04:10.635+08:00  INFO 47572 --- [med-base-server] [restartedMain] m.base.server.MedBaseServerApplication   : Starting MedBaseServerApplication using Java 18.0.2 with PID 47572 (D:\code\base\server-ui\med-base-server\target\classes started by gy in D:\code\base\server-ui\med-base-server)
+2025-11-26T11:04:10.635+08:00  INFO 47572 --- [med-base-server] [restartedMain] m.base.server.MedBaseServerApplication   : The following 1 profile is active: "prod"
+2025-11-26T11:04:10.905+08:00  INFO 47572 --- [med-base-server] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 7000 (http)
+2025-11-26T11:04:10.905+08:00  INFO 47572 --- [med-base-server] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-11-26T11:04:10.906+08:00  INFO 47572 --- [med-base-server] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.48]
+2025-11-26T11:04:10.934+08:00  INFO 47572 --- [med-base-server] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-11-26T11:04:10.934+08:00  INFO 47572 --- [med-base-server] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 298 ms
+2025-11-26T11:04:11.067+08:00  WARN 47572 --- [med-base-server] [restartedMain] c.b.m.core.metadata.TableInfoHelper      : This primary key of "id" is primitive !不建议如此请使用包装类 in Class: "med.base.server.model.AuthAgent"
+2025-11-26T11:04:11.076+08:00  WARN 47572 --- [med-base-server] [restartedMain] c.b.m.core.metadata.TableInfoHelper      : This primary key of "id" is primitive !不建议如此请使用包装类 in Class: "med.base.server.model.AuthRole"
+2025-11-26T11:04:11.084+08:00  WARN 47572 --- [med-base-server] [restartedMain] c.b.m.core.metadata.TableInfoHelper      : This primary key of "id" is primitive !不建议如此请使用包装类 in Class: "med.base.server.model.AuthMenu"
+2025-11-26T11:04:11.126+08:00  INFO 47572 --- [med-base-server] [restartedMain] m.e.s.MybatisPlusApplicationContextAware : Register ApplicationContext instances org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@1ce20f6a
+2025-11-26T11:04:11.136+08:00  INFO 47572 --- [med-base-server] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2025-11-26T11:04:11.142+08:00  INFO 47572 --- [med-base-server] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 7000 (http) with context path '/'
+2025-11-26T11:04:11.145+08:00  INFO 47572 --- [med-base-server] [restartedMain] m.base.server.MedBaseServerApplication   : Started MedBaseServerApplication in 0.542 seconds (process running for 1879.388)
+2025-11-26T11:04:11.145+08:00  INFO 47572 --- [med-base-server] [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2025-11-26T17:50:43.876+08:00  INFO 47572 --- [med-base-server] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-11-26T17:50:44.016+08:00  INFO 47572 --- [med-base-server] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-11-26T17:51:52.902+08:00  INFO 21396 --- [med-base-server] [restartedMain] m.base.server.MedBaseServerApplication   : Starting MedBaseServerApplication using Java 18.0.2 with PID 21396 (D:\code\base\server-ui\med-base-server\target\classes started by gy in D:\code\base\server-ui\med-base-server)
+2025-11-26T17:51:52.905+08:00  INFO 21396 --- [med-base-server] [restartedMain] m.base.server.MedBaseServerApplication   : The following 1 profile is active: "prod"
+2025-11-26T17:51:52.978+08:00  INFO 21396 --- [med-base-server] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-11-26T17:51:52.979+08:00  INFO 21396 --- [med-base-server] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-11-26T17:51:54.489+08:00  INFO 21396 --- [med-base-server] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 7000 (http)
+2025-11-26T17:51:54.507+08:00  INFO 21396 --- [med-base-server] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-11-26T17:51:54.508+08:00  INFO 21396 --- [med-base-server] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.48]
+2025-11-26T17:51:54.579+08:00  INFO 21396 --- [med-base-server] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-11-26T17:51:54.581+08:00  INFO 21396 --- [med-base-server] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1602 ms
+2025-11-26T17:51:55.015+08:00  WARN 21396 --- [med-base-server] [restartedMain] c.b.m.core.metadata.TableInfoHelper      : This primary key of "id" is primitive !不建议如此请使用包装类 in Class: "med.base.server.model.AuthAgent"
+2025-11-26T17:51:55.129+08:00  WARN 21396 --- [med-base-server] [restartedMain] c.b.m.core.metadata.TableInfoHelper      : This primary key of "id" is primitive !不建议如此请使用包装类 in Class: "med.base.server.model.AuthRole"
+2025-11-26T17:51:55.160+08:00  WARN 21396 --- [med-base-server] [restartedMain] c.b.m.core.metadata.TableInfoHelper      : This primary key of "id" is primitive !不建议如此请使用包装类 in Class: "med.base.server.model.AuthMenu"
+2025-11-26T17:51:55.463+08:00  INFO 21396 --- [med-base-server] [restartedMain] m.e.s.MybatisPlusApplicationContextAware : Register ApplicationContext instances org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@63113b54
+2025-11-26T17:51:55.577+08:00  INFO 21396 --- [med-base-server] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2025-11-26T17:51:55.617+08:00  INFO 21396 --- [med-base-server] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 7000 (http) with context path '/'
+2025-11-26T17:51:55.627+08:00  INFO 21396 --- [med-base-server] [restartedMain] m.base.server.MedBaseServerApplication   : Started MedBaseServerApplication in 3.727 seconds (process running for 4.808)
+2025-11-26T17:52:00.795+08:00  INFO 21396 --- [med-base-server] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-11-26T17:52:00.889+08:00  INFO 21396 --- [med-base-server] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete

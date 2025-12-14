@@ -1,0 +1,63 @@
+2025-11-25T17:07:48.394+08:00  INFO 11708 --- [med-base-server] [restartedMain] m.base.server.MedBaseServerApplication   : Starting MedBaseServerApplication using Java 18.0.2 with PID 11708 (D:\code\base\server-ui\med-base-server\target\classes started by gy in D:\code\base\server-ui\med-base-server)
+2025-11-25T17:07:48.407+08:00  INFO 11708 --- [med-base-server] [restartedMain] m.base.server.MedBaseServerApplication   : The following 1 profile is active: "prod"
+2025-11-25T17:07:48.457+08:00  INFO 11708 --- [med-base-server] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-11-25T17:07:48.458+08:00  INFO 11708 --- [med-base-server] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-11-25T17:07:49.502+08:00  INFO 11708 --- [med-base-server] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 7000 (http)
+2025-11-25T17:07:49.519+08:00  INFO 11708 --- [med-base-server] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-11-25T17:07:49.519+08:00  INFO 11708 --- [med-base-server] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.48]
+2025-11-25T17:07:49.585+08:00  INFO 11708 --- [med-base-server] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-11-25T17:07:49.586+08:00  INFO 11708 --- [med-base-server] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1128 ms
+2025-11-25T17:07:49.947+08:00  WARN 11708 --- [med-base-server] [restartedMain] c.b.m.core.metadata.TableInfoHelper      : This primary key of "id" is primitive !不建议如此请使用包装类 in Class: "med.base.server.model.AuthAgent"
+2025-11-25T17:07:50.046+08:00  WARN 11708 --- [med-base-server] [restartedMain] c.b.m.core.metadata.TableInfoHelper      : This primary key of "id" is primitive !不建议如此请使用包装类 in Class: "med.base.server.model.AuthRole"
+2025-11-25T17:07:50.065+08:00  WARN 11708 --- [med-base-server] [restartedMain] c.b.m.core.metadata.TableInfoHelper      : This primary key of "id" is primitive !不建议如此请使用包装类 in Class: "med.base.server.model.AuthMenu"
+2025-11-25T17:07:50.332+08:00  INFO 11708 --- [med-base-server] [restartedMain] m.e.s.MybatisPlusApplicationContextAware : Register ApplicationContext instances org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@18237c0a
+2025-11-25T17:07:50.412+08:00  INFO 11708 --- [med-base-server] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2025-11-25T17:07:50.443+08:00  INFO 11708 --- [med-base-server] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 7000 (http) with context path '/'
+2025-11-25T17:07:50.450+08:00  INFO 11708 --- [med-base-server] [restartedMain] m.base.server.MedBaseServerApplication   : Started MedBaseServerApplication in 2.723 seconds (process running for 4.402)
+2025-11-25T17:08:02.667+08:00  INFO 11708 --- [med-base-server] [http-nio-7000-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-11-25T17:08:02.667+08:00  INFO 11708 --- [med-base-server] [http-nio-7000-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-11-25T17:08:02.669+08:00  INFO 11708 --- [med-base-server] [http-nio-7000-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+2025-11-25T17:08:49.863+08:00  WARN 11708 --- [med-base-server] [http-nio-7000-exec-4] com.zaxxer.hikari.HikariConfig           : DataSourceHk - idleTimeout has been set but has no effect because the pool is operating as a fixed size pool.
+2025-11-25T17:08:49.864+08:00  INFO 11708 --- [med-base-server] [http-nio-7000-exec-4] com.zaxxer.hikari.HikariDataSource       : DataSourceHk - Starting...
+2025-11-25T17:08:50.665+08:00  INFO 11708 --- [med-base-server] [http-nio-7000-exec-4] com.zaxxer.hikari.pool.HikariPool        : DataSourceHk - Added connection com.mysql.cj.jdbc.ConnectionImpl@6973f528
+2025-11-25T17:08:50.667+08:00  INFO 11708 --- [med-base-server] [http-nio-7000-exec-4] com.zaxxer.hikari.HikariDataSource       : DataSourceHk - Start completed.
+2025-11-25T18:14:02.919+08:00  WARN 11708 --- [med-base-server] [DataSourceHk:housekeeper] com.zaxxer.hikari.pool.PoolBase          : DataSourceHk - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@49000081 (Communications link failure
+
+The last packet successfully received from the server was 109,774 milliseconds ago. The last packet sent successfully to the server was 109,803 milliseconds ago.). Possibly consider using a shorter maxLifetime value.
+2025-11-25T18:14:08.676+08:00  WARN 11708 --- [med-base-server] [DataSourceHk:housekeeper] com.zaxxer.hikari.pool.PoolBase          : DataSourceHk - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@6fd55c12 (The last packet successfully received from the server was 124,244 milliseconds ago. The last packet sent successfully to the server was 124,282 milliseconds ago. is longer than the server configured value of 'wait_timeout'. You should consider either expiring and/or testing connection validity before use in your application, increasing the server configured values for client timeouts, or using the Connector/J connection property 'autoReconnect=true' to avoid this problem.). Possibly consider using a shorter maxLifetime value.
+2025-11-25T18:14:46.462+08:00  WARN 11708 --- [med-base-server] [DataSourceHk:housekeeper] com.zaxxer.hikari.pool.PoolBase          : DataSourceHk - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@69b62a54 (Communications link failure
+
+The last packet successfully received from the server was 117,066 milliseconds ago. The last packet sent successfully to the server was 117,092 milliseconds ago.). Possibly consider using a shorter maxLifetime value.
+2025-11-25T18:36:16.955+08:00  INFO 11708 --- [med-base-server] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-11-25T18:36:17.083+08:00  INFO 11708 --- [med-base-server] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-11-25T18:36:17.183+08:00  INFO 11708 --- [med-base-server] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : DataSourceHk - Shutdown initiated...
+2025-11-25T18:36:17.213+08:00  INFO 11708 --- [med-base-server] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : DataSourceHk - Shutdown completed.
+2025-11-25T18:36:25.352+08:00  INFO 62508 --- [med-base-server] [restartedMain] m.base.server.MedBaseServerApplication   : Starting MedBaseServerApplication using Java 18.0.2 with PID 62508 (D:\code\base\server-ui\med-base-server\target\classes started by gy in D:\code\base\server-ui\med-base-server)
+2025-11-25T18:36:25.354+08:00  INFO 62508 --- [med-base-server] [restartedMain] m.base.server.MedBaseServerApplication   : The following 1 profile is active: "prod"
+2025-11-25T18:36:25.403+08:00  INFO 62508 --- [med-base-server] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-11-25T18:36:25.404+08:00  INFO 62508 --- [med-base-server] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-11-25T18:36:26.402+08:00  INFO 62508 --- [med-base-server] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 7000 (http)
+2025-11-25T18:36:26.416+08:00  INFO 62508 --- [med-base-server] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-11-25T18:36:26.417+08:00  INFO 62508 --- [med-base-server] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.48]
+2025-11-25T18:36:26.476+08:00  INFO 62508 --- [med-base-server] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-11-25T18:36:26.477+08:00  INFO 62508 --- [med-base-server] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1073 ms
+2025-11-25T18:36:26.797+08:00  WARN 62508 --- [med-base-server] [restartedMain] c.b.m.core.metadata.TableInfoHelper      : This primary key of "id" is primitive !不建议如此请使用包装类 in Class: "med.base.server.model.AuthAgent"
+2025-11-25T18:36:26.890+08:00  WARN 62508 --- [med-base-server] [restartedMain] c.b.m.core.metadata.TableInfoHelper      : This primary key of "id" is primitive !不建议如此请使用包装类 in Class: "med.base.server.model.AuthRole"
+2025-11-25T18:36:26.907+08:00  WARN 62508 --- [med-base-server] [restartedMain] c.b.m.core.metadata.TableInfoHelper      : This primary key of "id" is primitive !不建议如此请使用包装类 in Class: "med.base.server.model.AuthMenu"
+2025-11-25T18:36:27.141+08:00  INFO 62508 --- [med-base-server] [restartedMain] m.e.s.MybatisPlusApplicationContextAware : Register ApplicationContext instances org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@58d29332
+2025-11-25T18:36:27.223+08:00  INFO 62508 --- [med-base-server] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2025-11-25T18:36:27.257+08:00  INFO 62508 --- [med-base-server] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 7000 (http) with context path '/'
+2025-11-25T18:36:27.264+08:00  INFO 62508 --- [med-base-server] [restartedMain] m.base.server.MedBaseServerApplication   : Started MedBaseServerApplication in 2.594 seconds (process running for 3.662)
+2025-11-25T18:36:44.486+08:00  INFO 62508 --- [med-base-server] [http-nio-7000-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-11-25T18:36:44.486+08:00  INFO 62508 --- [med-base-server] [http-nio-7000-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-11-25T18:36:44.487+08:00  INFO 62508 --- [med-base-server] [http-nio-7000-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2025-11-25T18:36:52.323+08:00  WARN 62508 --- [med-base-server] [http-nio-7000-exec-4] com.zaxxer.hikari.HikariConfig           : DataSourceHk - idleTimeout has been set but has no effect because the pool is operating as a fixed size pool.
+2025-11-25T18:36:52.323+08:00  INFO 62508 --- [med-base-server] [http-nio-7000-exec-4] com.zaxxer.hikari.HikariDataSource       : DataSourceHk - Starting...
+2025-11-25T18:36:52.947+08:00  INFO 62508 --- [med-base-server] [http-nio-7000-exec-4] com.zaxxer.hikari.pool.HikariPool        : DataSourceHk - Added connection com.mysql.cj.jdbc.ConnectionImpl@2d950deb
+2025-11-25T18:36:52.948+08:00  INFO 62508 --- [med-base-server] [http-nio-7000-exec-4] com.zaxxer.hikari.HikariDataSource       : DataSourceHk - Start completed.
+2025-11-25T19:06:13.590+08:00  WARN 62508 --- [med-base-server] [DataSourceHk:housekeeper] com.zaxxer.hikari.pool.PoolBase          : DataSourceHk - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@5b4ad974 (Communications link failure
+
+The last packet successfully received from the server was 109,116 milliseconds ago. The last packet sent successfully to the server was 109,134 milliseconds ago.). Possibly consider using a shorter maxLifetime value.
+2025-11-25T19:06:18.051+08:00  WARN 62508 --- [med-base-server] [DataSourceHk:housekeeper] com.zaxxer.hikari.pool.PoolBase          : DataSourceHk - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@5dc920a9 (Communications link failure
+
+The last packet successfully received from the server was 120,097 milliseconds ago. The last packet sent successfully to the server was 120,115 milliseconds ago.). Possibly consider using a shorter maxLifetime value.
