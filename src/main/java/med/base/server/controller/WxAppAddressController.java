@@ -41,6 +41,7 @@ public class WxAppAddressController {
         UmsAddress address = addressService.getDefaultAddress(userId);
         if (address == null) {
             return DefaultResponse.success(null);
+
         }
         return DefaultResponse.success(toVO(address));
     }
