@@ -42,6 +42,8 @@ public class UploadController {
                 return result;
             }
 
+            
+
             String url = qiniuUtil.upload(file, dir);
             log.info("文件上传成功: {}", url);
 
