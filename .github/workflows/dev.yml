@@ -10,7 +10,7 @@ on:
     types: [ opened ]
 
 jobs:
-  test :
+  dev :
     runs-on: ubuntu-latest
 
     steps:
