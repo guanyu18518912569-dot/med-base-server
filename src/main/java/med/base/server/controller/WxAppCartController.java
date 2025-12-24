@@ -17,6 +17,7 @@ import java.util.stream.Collectors;
 
 /**
  * 微信小程序购物车接口
+ * 添加购物车
  */
 @RestController
 @RequestMapping("/wxapp/cart")
