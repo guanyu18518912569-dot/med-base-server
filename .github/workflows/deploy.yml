@@ -1,0 +1,33 @@
+name: "Deploy"
+
+on:
+  push:
+    tag:
+      - v*
+
+jobs:
+  Deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+
+      - name: Upload
+        uses: appleboy/scp-action@v1
+        with:
+          host: ${{ secrets.SERVERHOST }}
+          username: ${{ secrets.SERVERName }}
+          key: ${{ secrets.SERVERKey }}
+          sourse: './'
+          target: "/etc/projects/med-base/"
+
+      - name: Start service
+        uses: appleboy/ssh-action@v1
+        with:
+          host: ${{ secrets.SERVERHOST }}
+          username: ${{ secrets.SERVERName }}
+          key: ${{ secrets.SERVERKey }}
+          script:
+            cd /etc/projects/med-base
+            java -jar
