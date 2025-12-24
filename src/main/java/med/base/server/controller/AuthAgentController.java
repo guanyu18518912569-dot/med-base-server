@@ -29,8 +29,6 @@ public class AuthAgentController {
     @Autowired
     AuthAgentService authAgentService;
 
-
-
     @GetMapping("/getVerifyCode")
     @PassToken
     public void getVerifyCode(HttpServletRequest request, HttpServletResponse response){
