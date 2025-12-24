@@ -19,6 +19,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.HashMap;
 import java.util.Map;
 
+// add new equipment
 @RestController
 @RequestMapping("/agent")
 public class AuthAgentController {
