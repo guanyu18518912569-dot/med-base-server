@@ -150,9 +150,11 @@ public class PmsSpuController {
         spu.setAllocationRatioCity(spuModel.getAllocationRatioCity());
         spu.setAllocationRatioProvince(spuModel.getAllocationRatioProvince());
         spu.setAllocationRatioDistrict(spuModel.getAllocationRatioDistrict());
+        spu.setInviteIncomeRatio(spuModel.getInviteIncomeRatio());
         spu.setPicUrls(spuModel.getPicUrls());
         spu.setVideoUrl(spuModel.getVideoUrl());
         spu.setMainImage(spuModel.getMainImageUrl());
+
 
         // 设置 SKU 列表数据
         if (spuModel.getSkuList() != null && !spuModel.getSkuList().isEmpty()) {
@@ -225,6 +227,31 @@ public class PmsSpuController {
             return DefaultResponse.success(spuModel);
         } catch (Exception e) {
             return DefaultResponse.error("获取商品详情失败: " + e.getMessage());
+        }
+    }
+
+    /**
+     * 删除商品 SPU 及其 SKU 列表
+     */
+    @DeleteMapping(value = "delete/{spuId}")
+    @UserLoginToken
+    public String delete(@PathVariable String spuId) {
+        try {
+            if (spuId == null || spuId.trim().isEmpty()) {
+                return DefaultResponse.error("商品ID不能为空");
+            }
+            
+            // 检查商品是否存在
+            SpuModel spuModel = pmsService.getSpuDetail(spuId);
+            if (spuModel == null) {
+                return DefaultResponse.error("商品不存在");
+            }
+            
+            // 执行删除操作
+            pmsService.deleteSpu(spuId);
+            return DefaultResponse.success();
+        } catch (Exception e) {
+            return DefaultResponse.error("删除商品失败: " + e.getMessage());
         }
     }
 
@@ -405,6 +432,7 @@ class SpuModelVo {
     BigDecimal allocationRatioCity;
     BigDecimal allocationRatioDistrict;
     BigDecimal allocationRatioProvince ;
+    BigDecimal inviteIncomeRatio ;
 
     List<SkuListVo> skuList;
 }

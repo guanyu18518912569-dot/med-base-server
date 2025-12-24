@@ -12,7 +12,8 @@ public class InterceptorConfig implements WebMvcConfigurer {
     public void addInterceptors(InterceptorRegistry registry) {
 
         registry.addInterceptor(authenticationInterceptor())
-                .addPathPatterns("/**"); // 拦截所有请求
+                .addPathPatterns("/**") // 拦截所有请求
+                .excludePathPatterns("/wxapp/**"); // 排除微信小程序接口，无需登录验证
     }
 
     @Bean

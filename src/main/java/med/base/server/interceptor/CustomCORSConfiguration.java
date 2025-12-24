@@ -14,6 +14,7 @@ public class CustomCORSConfiguration {
         CorsConfiguration corsConfiguration = new CorsConfiguration();
         corsConfiguration.addAllowedHeader("*"); // 允许任何的head头部
         corsConfiguration.addAllowedOrigin("http://localhost:3000"); // 允许任何域名使用
+        corsConfiguration.addAllowedOrigin("https://admin.risktechs.com/"); // 允许任何域名使用
         corsConfiguration.addAllowedMethod("*"); // 允许任何的请求方法
         corsConfiguration.setMaxAge(3600L);
 

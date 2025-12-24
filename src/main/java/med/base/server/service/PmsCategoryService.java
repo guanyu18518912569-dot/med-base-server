@@ -38,4 +38,8 @@ public class PmsCategoryService {
     public PmsCategory getById(int categoryId){
         return pmsCategoryMapper.selectById(categoryId);
     }
+
+    public void updateById(PmsCategory pmsCategory){
+        pmsCategoryMapper.updateById(pmsCategory);
+    }
 }

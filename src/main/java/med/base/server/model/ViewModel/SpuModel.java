@@ -30,6 +30,7 @@ public class SpuModel implements Serializable {
     BigDecimal allocationRatioCity;
     BigDecimal allocationRatioDistrict;
     BigDecimal allocationRatioProvince ;
+    BigDecimal inviteIncomeRatio ;
 
     List<PmsSkuSpec> pmsSkuSpecList;
 

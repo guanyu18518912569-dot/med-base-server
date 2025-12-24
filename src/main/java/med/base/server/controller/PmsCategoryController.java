@@ -88,6 +88,38 @@ public class PmsCategoryController {
         return DefaultResponse.success();
     }
 
+    @PostMapping(value = "/update")
+    @UserLoginToken
+    public String updateCategory(@RequestBody CategoryViewModel categoryViewModel){
+
+        // 参数验证
+        if (categoryViewModel.getCategoryId() == null) {
+            return DefaultResponse.error("分类ID不能为空");
+        }
+
+        // 查询原分类
+        PmsCategory existing = pmsCategoryService.getById(categoryViewModel.getCategoryId());
+        if (existing == null) {
+            return DefaultResponse.error("分类不存在");
+        }
+
+        // 更新字段（只更新非空字段）
+        if (StringUtils.hasText(categoryViewModel.getCategoryName())) {
+            existing.setCategoryName(categoryViewModel.getCategoryName());
+        }
+        if (categoryViewModel.getSort() != null) {
+            existing.setSort(categoryViewModel.getSort());
+        }
+        if (categoryViewModel.getIcon() != null) {
+            existing.setIcon(categoryViewModel.getIcon());
+        }
+
+        // 保存更新
+        pmsCategoryService.updateById(existing);
+
+        return DefaultResponse.success();
+    }
+
     // 核心递归方法（只需这几行！）
     private List<CategoryTreeVO> buildTree(List<PmsCategory> nodes)
     {
@@ -102,6 +134,7 @@ public class PmsCategoryController {
                             vo.setCategoryName(c.getCategoryName());
                             vo.setLevel(c.getLevel());
                             vo.setSort(Optional.of(c.getSort()).orElse(0));
+                            vo.setIcon(c.getIcon());
                             vo.setChildren(new ArrayList<>());
                             return vo;
                         },
@@ -144,6 +177,7 @@ class CategoryTreeVO {
     private String CategoryName;
     private Integer level;
     private Integer sort;
+    private String icon;
     private List<CategoryTreeVO> children;
 }
 
@@ -151,7 +185,9 @@ class CategoryTreeVO {
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @Data
 class CategoryViewModel {
+    private Integer categoryId; // 编辑时需要
     private String categoryName;
     private Integer parentId;
     private Integer sort;
+    private String icon; // 分类图标/图片URL
 }

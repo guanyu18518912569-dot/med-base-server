@@ -1,6 +1,7 @@
 package med.base.server.model;
 
 import com.baomidou.mybatisplus.annotation.IdType;
+import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -37,12 +38,18 @@ public class PmsSpu implements Serializable {
     private int freightTemplateId;
     private int status;
     private int sort;
-    private int isDeleted;
+    
+    @TableField("spu_deleted")
+    private int spuDeleted;  // 对应数据库 spu_deleted 列
     
     // 拨付比例
     private BigDecimal allocationRatioProvince;
     private BigDecimal allocationRatioCity;
     private BigDecimal allocationRatioDistrict;
+    private BigDecimal inviteIncomeRatio;
+    
+    // 已售数量
+    private Integer salesCount;
 
     private LocalDateTime createdTime;
     private LocalDateTime updatedTime;

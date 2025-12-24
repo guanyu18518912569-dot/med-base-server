@@ -57,7 +57,7 @@ public class PmsService {
         if (StringUtils.hasLength(keyword)) {
             qw.like("spu_name", keyword);
         }
-        qw.eq("is_deleted", 0);
+        qw.eq("spu_deleted", 0);
         qw.orderByDesc("created_time");
 
         IPage<PmsSpu> spuPage = pmsSpuMapper.selectPage(page, qw);
@@ -76,6 +76,7 @@ public class PmsService {
                     .allocationRatioProvince(spu.getAllocationRatioProvince())
                     .allocationRatioCity(spu.getAllocationRatioCity())
                     .allocationRatioDistrict(spu.getAllocationRatioDistrict())
+                    .inviteIncomeRatio(spu.getInviteIncomeRatio())
                     .build();
             
             // 查询分类名称
@@ -116,7 +117,7 @@ public class PmsService {
                 .picUrls(spuModel.getPicUrls())
                 .videoUrl(spuModel.getVideoUrl())
                 .sort(0)
-                .isDeleted(0)
+                .spuDeleted(0)
                 .status(1)
                 .mainImage(spuModel.getMainImage())
                 .createdTime(now)
@@ -124,6 +125,7 @@ public class PmsService {
                 .allocationRatioCity(spuModel.getAllocationRatioCity())
                 .allocationRatioProvince(spuModel.getAllocationRatioProvince())
                 .allocationRatioDistrict(spuModel.getAllocationRatioDistrict())
+                .inviteIncomeRatio(spuModel.getInviteIncomeRatio())
                         .build();
 
         pmsSpuMapper.insert(spu);
@@ -194,6 +196,7 @@ public class PmsService {
         spuModel.setAllocationRatioProvince(spu.getAllocationRatioProvince());
         spuModel.setAllocationRatioCity(spu.getAllocationRatioCity());
         spuModel.setAllocationRatioDistrict(spu.getAllocationRatioDistrict());
+        spuModel.setInviteIncomeRatio(spu.getInviteIncomeRatio());
         spuModel.setSkuList(skuList);
 
         return spuModel;
@@ -220,6 +223,7 @@ public class PmsService {
                 .allocationRatioProvince(spuModel.getAllocationRatioProvince())
                 .allocationRatioCity(spuModel.getAllocationRatioCity())
                 .allocationRatioDistrict(spuModel.getAllocationRatioDistrict())
+                .inviteIncomeRatio(spuModel.getInviteIncomeRatio())
                 .updatedTime(now)
                 .build();
 
@@ -263,5 +267,25 @@ public class PmsService {
                 }
             }
         }
+    }
+
+    @Transactional
+    public void deleteSpu(String spuId) {
+        // 逻辑删除 SPU - 使用 UpdateWrapper 确保更新生效
+        com.baomidou.mybatisplus.core.conditions.update.UpdateWrapper<PmsSpu> updateWrapper = 
+            new com.baomidou.mybatisplus.core.conditions.update.UpdateWrapper<>();
+        updateWrapper.eq("spu_id", spuId)
+                     .set("spu_deleted", 1)
+                     .set("updated_time", LocalDateTime.now());
+        pmsSpuMapper.update(null, updateWrapper);
+        
+        // 同时逻辑删除相关的 SKU
+        com.baomidou.mybatisplus.core.conditions.update.UpdateWrapper<PmsSku> skuUpdateWrapper = 
+            new com.baomidou.mybatisplus.core.conditions.update.UpdateWrapper<>();
+        skuUpdateWrapper.eq("spu_id", spuId)
+                        .eq("is_deleted", 0)
+                        .set("is_deleted", 1)
+                        .set("updated_time", LocalDateTime.now());
+        pmsSkuMapper.update(null, skuUpdateWrapper);
     }
 }

@@ -1,0 +1,47 @@
+2025-12-12T09:18:03.394+08:00  INFO 33764 --- [med-base-server] [restartedMain] m.base.server.MedBaseServerApplication   : Starting MedBaseServerApplication using Java 18.0.2 with PID 33764 (D:\code\base\server-ui\med-base-server\target\classes started by gy in D:\code\base\server-ui\med-base-server)
+2025-12-12T09:18:03.417+08:00  INFO 33764 --- [med-base-server] [restartedMain] m.base.server.MedBaseServerApplication   : The following 1 profile is active: "prod"
+2025-12-12T09:18:03.499+08:00  INFO 33764 --- [med-base-server] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-12-12T09:18:03.500+08:00  INFO 33764 --- [med-base-server] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-12-12T09:18:05.453+08:00  INFO 33764 --- [med-base-server] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8880 (http)
+2025-12-12T09:18:05.475+08:00  INFO 33764 --- [med-base-server] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-12-12T09:18:05.475+08:00  INFO 33764 --- [med-base-server] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.48]
+2025-12-12T09:18:05.574+08:00  INFO 33764 --- [med-base-server] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-12-12T09:18:05.575+08:00  INFO 33764 --- [med-base-server] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2073 ms
+2025-12-12T09:18:07.061+08:00  INFO 33764 --- [med-base-server] [restartedMain] m.e.s.MybatisPlusApplicationContextAware : Register ApplicationContext instances org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@4dbcae67
+2025-12-12T09:18:07.307+08:00  INFO 33764 --- [med-base-server] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2025-12-12T09:18:07.365+08:00  INFO 33764 --- [med-base-server] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8880 (http) with context path '/'
+2025-12-12T09:18:07.377+08:00  INFO 33764 --- [med-base-server] [restartedMain] m.base.server.MedBaseServerApplication   : Started MedBaseServerApplication in 4.983 seconds (process running for 6.605)
+2025-12-12T09:35:37.162+08:00  INFO 33764 --- [med-base-server] [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 89 class path changes (0 additions, 85 deletions, 4 modifications)
+2025-12-12T09:35:37.175+08:00  INFO 33764 --- [med-base-server] [Thread-5] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-12-12T09:35:37.393+08:00  INFO 33764 --- [med-base-server] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-12-12T09:35:37.602+08:00  INFO 33764 --- [med-base-server] [restartedMain] m.base.server.MedBaseServerApplication   : Starting MedBaseServerApplication using Java 18.0.2 with PID 33764 (D:\code\base\server-ui\med-base-server\target\classes started by gy in D:\code\base\server-ui\med-base-server)
+2025-12-12T09:35:37.603+08:00  INFO 33764 --- [med-base-server] [restartedMain] m.base.server.MedBaseServerApplication   : The following 1 profile is active: "prod"
+2025-12-12T09:35:37.990+08:00  WARN 33764 --- [med-base-server] [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : No MyBatis mapper was found in '[med.base.server.mapper]' package. Please check your configuration.
+2025-12-12T09:35:38.074+08:00  INFO 33764 --- [med-base-server] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8880 (http)
+2025-12-12T09:35:38.078+08:00  INFO 33764 --- [med-base-server] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-12-12T09:35:38.079+08:00  INFO 33764 --- [med-base-server] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.48]
+2025-12-12T09:35:38.135+08:00  INFO 33764 --- [med-base-server] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-12-12T09:35:38.136+08:00  INFO 33764 --- [med-base-server] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 530 ms
+2025-12-12T09:35:38.601+08:00  INFO 33764 --- [med-base-server] [restartedMain] m.e.s.MybatisPlusApplicationContextAware : Register ApplicationContext instances org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@299e6ec9
+2025-12-12T09:35:38.651+08:00  INFO 33764 --- [med-base-server] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2025-12-12T09:35:38.668+08:00  INFO 33764 --- [med-base-server] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8880 (http) with context path '/'
+2025-12-12T09:35:38.674+08:00  INFO 33764 --- [med-base-server] [restartedMain] m.base.server.MedBaseServerApplication   : Started MedBaseServerApplication in 1.167 seconds (process running for 1057.875)
+2025-12-12T09:35:38.677+08:00  INFO 33764 --- [med-base-server] [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2025-12-12T09:35:43.404+08:00  INFO 33764 --- [med-base-server] [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 85 class path changes (85 additions, 0 deletions, 0 modifications)
+2025-12-12T09:35:43.405+08:00  INFO 33764 --- [med-base-server] [Thread-7] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-12-12T09:35:43.515+08:00  INFO 33764 --- [med-base-server] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-12-12T09:35:43.593+08:00  INFO 33764 --- [med-base-server] [restartedMain] m.base.server.MedBaseServerApplication   : Starting MedBaseServerApplication using Java 18.0.2 with PID 33764 (D:\code\base\server-ui\med-base-server\target\classes started by gy in D:\code\base\server-ui\med-base-server)
+2025-12-12T09:35:43.594+08:00  INFO 33764 --- [med-base-server] [restartedMain] m.base.server.MedBaseServerApplication   : The following 1 profile is active: "prod"
+2025-12-12T09:35:43.856+08:00  INFO 33764 --- [med-base-server] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8880 (http)
+2025-12-12T09:35:43.857+08:00  INFO 33764 --- [med-base-server] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-12-12T09:35:43.857+08:00  INFO 33764 --- [med-base-server] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.48]
+2025-12-12T09:35:43.883+08:00  INFO 33764 --- [med-base-server] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-12-12T09:35:43.883+08:00  INFO 33764 --- [med-base-server] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 287 ms
+2025-12-12T09:35:44.308+08:00  INFO 33764 --- [med-base-server] [restartedMain] m.e.s.MybatisPlusApplicationContextAware : Register ApplicationContext instances org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@1315eee7
+2025-12-12T09:35:44.331+08:00  INFO 33764 --- [med-base-server] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2025-12-12T09:35:44.343+08:00  INFO 33764 --- [med-base-server] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8880 (http) with context path '/'
+2025-12-12T09:35:44.349+08:00  INFO 33764 --- [med-base-server] [restartedMain] m.base.server.MedBaseServerApplication   : Started MedBaseServerApplication in 0.795 seconds (process running for 1063.549)
+2025-12-12T09:35:44.352+08:00  INFO 33764 --- [med-base-server] [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2025-12-12T09:37:02.103+08:00  INFO 33764 --- [med-base-server] [http-nio-8880-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-12-12T09:37:02.103+08:00  INFO 33764 --- [med-base-server] [http-nio-8880-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-12-12T09:37:02.105+08:00  INFO 33764 --- [med-base-server] [http-nio-8880-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms

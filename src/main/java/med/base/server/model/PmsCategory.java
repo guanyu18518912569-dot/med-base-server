@@ -24,4 +24,5 @@ public class PmsCategory implements Serializable {
     private String categoryName;
     private int level;
     private int sort;
+    private String icon; // 分类图标/图片URL
 }

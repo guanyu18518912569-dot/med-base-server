@@ -34,7 +34,8 @@ public class SpuPageVo implements Serializable {
     private java.math.BigDecimal allocationRatioProvince;
     private java.math.BigDecimal allocationRatioCity;
     private java.math.BigDecimal allocationRatioDistrict;
-    
+    private java.math.BigDecimal inviteIncomeRatio;
+
     private Integer status;
     private LocalDateTime createdTime;
 }
