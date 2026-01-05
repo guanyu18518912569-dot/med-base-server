@@ -8,7 +8,7 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.io.Serial;
+
 import java.io.Serializable;
 import java.time.LocalDateTime;
 
@@ -22,7 +22,6 @@ import java.time.LocalDateTime;
 @TableName("oms_cart")
 public class OmsCart implements Serializable {
 
-    @Serial
     private static final long serialVersionUID = -5120968924389429993L;
 
     @TableId(type = IdType.AUTO)

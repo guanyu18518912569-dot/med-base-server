@@ -6,7 +6,7 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.io.Serial;
+
 import java.io.Serializable;
 import java.time.LocalDateTime;
 
@@ -15,7 +15,6 @@ import java.time.LocalDateTime;
 @NoArgsConstructor
 @AllArgsConstructor
 public class PmsSpuAttr  implements Serializable {
-    @Serial
     private static final long serialVersionUID = -4694520410084760645L;
 
 

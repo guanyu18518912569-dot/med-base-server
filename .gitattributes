@@ -1,3 +1,22 @@
 /mvnw text eol=lf
 *.cmd text eol=crlf
 * text=auto
+
+# Java 源文件强制使用 UTF-8 编码
+*.java text eol=lf encoding=UTF-8
+
+# Properties 文件
+*.properties text eol=lf encoding=UTF-8
+
+# XML 文件
+*.xml text eol=lf encoding=UTF-8
+
+# YAML 文件
+*.yml text eol=lf encoding=UTF-8
+*.yaml text eol=lf encoding=UTF-8
+
+# SQL 文件
+*.sql text eol=lf encoding=UTF-8
+
+# Markdown 文件
+*.md text eol=lf encoding=UTF-8

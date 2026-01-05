@@ -8,7 +8,7 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.io.Serial;
+
 import java.io.Serializable;
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
@@ -24,7 +24,6 @@ import java.util.List;
 @TableName("oms_order")
 public class OmsOrder implements Serializable {
 
-    @Serial
     private static final long serialVersionUID = -5283072429574961307L;
 
     @TableId
@@ -97,6 +96,9 @@ public class OmsOrder implements Serializable {
     
     // 支付方式：1-微信支付
     private Integer payType;
+    
+    // 微信支付交易号
+    private String transactionId;
     
     // 支付时间
     private LocalDateTime payTime;

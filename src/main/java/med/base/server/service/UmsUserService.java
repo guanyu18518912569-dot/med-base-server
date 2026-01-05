@@ -171,14 +171,14 @@ public class UmsUserService {
             UmsUser parent = umsUserMapper.selectByInviteCode(inviteCode);
             if (parent != null) {
                 newUser.setParentId(parent.getUmsUserId());
-                
+
                 // 构建推荐路径
                 if (StringUtils.hasLength(parent.getParentPath())) {
                     newUser.setParentPath(parent.getParentPath() + "," + parent.getUmsUserId());
                 } else {
                     newUser.setParentPath(parent.getUmsUserId());
                 }
-                
+
                 // 设置层级
                 newUser.setLevel(parent.getLevel() + 1);
             }
@@ -191,7 +191,7 @@ public class UmsUserService {
         if (StringUtils.hasLength(newUser.getParentId())) {
             // 直接上级的直推人数 +1
             umsUserMapper.updateDirectCount(newUser.getParentId(), 1);
-            
+
             // 路径上所有上级的团队人数 +1
             String[] parentIds = getParentPathArray(userId);
             for (String parentId : parentIds) {
@@ -238,6 +238,8 @@ public class UmsUserService {
 
     /**
      * 计算并发放推荐收益（一级收益）
+     * 注意：此方法只增加 total_income（累计收益），不增加 account（可提现余额）
+     * 可提现余额需要通过结算流程（将 oms_order_allocation 的 settlement_status 改为1）后才会增加
      * @param userId 消费用户ID
      * @param orderAmount 订单金额
      * @param commissionRate 佣金比例（例如 0.1 表示 10%）
@@ -252,9 +254,10 @@ public class UmsUserService {
 
         // 计算佣金
         BigDecimal commission = orderAmount.multiply(commissionRate);
-        
-        // 发放给直接上级
-        umsUserMapper.addIncome(user.getParentId(), commission);
+
+        // 只增加累计收益，不增加可提现余额
+        // 可提现余额通过结算功能手动处理
+        umsUserMapper.addTotalIncome(user.getParentId(), commission);
 
         return commission;
     }
@@ -267,5 +270,33 @@ public class UmsUserService {
     public void updateUser(UmsUser user) {
         user.setUpdatedTime(LocalDateTime.now());
         umsUserMapper.updateById(user);
+    }
+
+    /**
+     * 根据openid更新用户信息（昵称和头像）
+     * 用于小程序个人中心登录时更新用户信息
+     * @param openid 用户的微信openid
+     * @param nickName 昵称
+     * @param avatarUrl 头像URL
+     * @return 更新后的用户信息，如果用户不存在返回null
+     */
+    public UmsUser updateUserInfoByOpenid(String openid, String nickName, String avatarUrl) {
+        // 查询用户
+        UmsUser user = umsUserMapper.selectByOpenid(openid);
+        if (user == null) {
+            return null;
+        }
+
+        // 更新昵称和头像
+        if (StringUtils.hasLength(nickName)) {
+            user.setNickName(nickName);
+        }
+        if (StringUtils.hasLength(avatarUrl)) {
+            user.setPhotoUrl(avatarUrl);
+        }
+        user.setUpdatedTime(LocalDateTime.now());
+
+        umsUserMapper.updateById(user);
+        return user;
     }
 }

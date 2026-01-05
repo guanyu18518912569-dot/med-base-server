@@ -42,7 +42,7 @@ public class AuthAgentService {
 
         QueryWrapper<AuthAgent> qw = new QueryWrapper<>();
 
-        if (!StringUtils.hasLength(userName)) {
+        if (StringUtils.hasLength(userName)) {
             qw.eq("phone", userName);
         }
 

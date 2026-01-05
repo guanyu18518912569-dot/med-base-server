@@ -1,7 +1,7 @@
 package med.base.server.interceptor;
 
-import jakarta.servlet.http.HttpServletRequest;
-import jakarta.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import med.base.server.annotation.PassToken;
 import med.base.server.annotation.RequiresRolePermissions;
 import med.base.server.annotation.UserLoginToken;

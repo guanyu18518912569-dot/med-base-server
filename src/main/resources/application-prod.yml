@@ -1,19 +1,26 @@
 server:
   port: 8880
+  servlet:
+    encoding:
+      charset: UTF-8
+      enabled: true
+      force: true
 spring:
   datasource:
-    url: jdbc:mysql://39.100.83.107:3326/small_mall?characterEncoding=UTF-8&&zeroDateTimeBehavior=convertToNull&autoReconnect=true&failOverReadOnly=false&connectTimeout=0&useSSL=true&queryTimeout=2400&serverTimezone=Asia/Shanghai
+    url: jdbc:mysql://39.100.83.107:3326/small_mall?characterEncoding=UTF-8&useUnicode=true&zeroDateTimeBehavior=convertToNull&autoReconnect=true&failOverReadOnly=false&connectTimeout=0&useSSL=true&queryTimeout=2400&serverTimezone=Asia/Shanghai
     username: root
     password: 5tgbnhy6%TGBNHY^
     type: com.zaxxer.hikari.HikariDataSource
     hikari:
       auto-commit: true
-      idle-timeout: 10000
+      idle-timeout: 30000
       pool-name: DataSourceHk
-      max-lifetime: 1800000
+      max-lifetime: 120000
+      minimum-idle: 5
       connection-timeout: 30000
       maximum-pool-size: 20
       connection-test-query: SELECT 1
+      keepalive-time: 30000
   mvc:
     favicon:
       enabled: false
@@ -38,3 +45,22 @@ qiniu:
   bucket: swzx-samll-mall
   # 访问域名前缀（不带协议）
   domain: static.siweizx.com
+
+# 微信支付配置
+wxpay:
+  # 小程序AppID
+  appid: wxe697d25bc6019fc9
+  # 商户号
+  mch-id: 1736902717
+  # 商户私钥文件路径
+  private-key-path: /opt/projects/med-server/cert/apiclient_key.pem
+  # 商户证书序列号
+  merchant-serial-number: 6452DAF98B357D312021F86A1A1EC1841C3C1780
+  # API v3 密钥
+  api-v3-key: 9o32fohF4RXXQs6UmXtg54a6ZhoyopXa
+  # 微信支付公钥路径（从商户平台下载）
+  wechat-pay-public-key-path: /opt/projects/med-server/cert/wechatpay_public_key.pem
+  # 微信支付公钥ID（从商户平台获取）
+  wechat-pay-public-key-id: PUB_KEY_ID_0117369027172025122700292060000202
+  # 支付结果通知地址
+  notify-url: https://api.risktechs.com/api/wx/pay/notify

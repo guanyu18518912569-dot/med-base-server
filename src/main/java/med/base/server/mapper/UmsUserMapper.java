@@ -78,10 +78,16 @@ public interface UmsUserMapper extends BaseMapper<UmsUser> {
     int addSelfConsumption(@Param("userId") String userId, @Param("amount") BigDecimal amount);
 
     /**
-     * 增加累计收益
+     * 增加累计收益（同时增加可提现余额）
      */
     @Update("UPDATE ums_user SET total_income = total_income + #{amount}, account = account + #{amount} WHERE ums_user_id = #{userId}")
     int addIncome(@Param("userId") String userId, @Param("amount") BigDecimal amount);
+
+    /**
+     * 仅增加累计收益（不增加可提现余额，用于订单分佣）
+     */
+    @Update("UPDATE ums_user SET total_income = total_income + #{amount} WHERE ums_user_id = #{userId}")
+    int addTotalIncome(@Param("userId") String userId, @Param("amount") BigDecimal amount);
 
     /**
      * 增加积分（每消费1元=1积分）

@@ -51,7 +51,8 @@ public class PmsService {
         if (brandId > 0) {
             qw.eq("brand_id", brandId);
         }
-        if (status > 0) {
+        // status >= 0 表示按状态过滤；status < 0 表示不过滤
+        if (status >= 0) {
             qw.eq("status", status);
         }
         if (StringUtils.hasLength(keyword)) {
@@ -267,6 +268,20 @@ public class PmsService {
                 }
             }
         }
+    }
+
+    /**
+     * 仅更新商品状态
+     */
+    @Transactional
+    public void updateSpuStatus(String spuId, int status) {
+        // 使用 LambdaUpdateWrapper 确保只更新状态字段，不影响其他字段（如分类、品牌等）
+        com.baomidou.mybatisplus.core.conditions.update.LambdaUpdateWrapper<PmsSpu> updateWrapper = 
+            new com.baomidou.mybatisplus.core.conditions.update.LambdaUpdateWrapper<>();
+        updateWrapper.eq(PmsSpu::getSpuId, spuId)
+                     .set(PmsSpu::getStatus, status)
+                     .set(PmsSpu::getUpdatedTime, LocalDateTime.now());
+        pmsSpuMapper.update(null, updateWrapper);
     }
 
     @Transactional

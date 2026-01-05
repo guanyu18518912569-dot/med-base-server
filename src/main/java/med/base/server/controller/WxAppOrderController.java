@@ -1,6 +1,7 @@
 package med.base.server.controller;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.Data;
 import med.base.server.common.DefaultResponse;
 import med.base.server.mapper.OmsInvoiceMapper;
@@ -8,9 +9,11 @@ import med.base.server.model.OmsInvoice;
 import med.base.server.model.OmsOrder;
 import med.base.server.model.OmsOrderItem;
 import med.base.server.service.OmsOrderService;
+import med.base.server.service.WxPayService;
 import med.base.server.util.SysUtil;
 import org.springframework.web.bind.annotation.*;
 
+import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -25,10 +28,13 @@ public class WxAppOrderController {
 
     private final OmsOrderService orderService;
     private final OmsInvoiceMapper invoiceMapper;
+    private final WxPayService wxPayService;
+    private final ObjectMapper objectMapper = new ObjectMapper();
 
-    public WxAppOrderController(OmsOrderService orderService, OmsInvoiceMapper invoiceMapper) {
+    public WxAppOrderController(OmsOrderService orderService, OmsInvoiceMapper invoiceMapper, WxPayService wxPayService) {
         this.orderService = orderService;
         this.invoiceMapper = invoiceMapper;
+        this.wxPayService = wxPayService;
     }
 
     /**
@@ -44,7 +50,7 @@ public class WxAppOrderController {
             if (request.getGoodsList() == null || request.getGoodsList().isEmpty()) {
                 return DefaultResponse.error("商品列表不能为空");
             }
-            
+
             // 构建订单
             OmsOrder order = OmsOrder.builder()
                     .userId(request.getUserId())
@@ -59,7 +65,7 @@ public class WxAppOrderController {
                     .remark(request.getRemark())
                     .payType(1) // 微信支付
                     .build();
-            
+
             // 构建订单商品列表
             List<OmsOrderItem> orderItems = new ArrayList<>();
             for (WxOrderGoodsItem goods : request.getGoodsList()) {
@@ -74,12 +80,12 @@ public class WxAppOrderController {
                         .build();
                 orderItems.add(item);
             }
-            
+
             // 创建订单
             OmsOrder createdOrder = orderService.createOrder(order, orderItems);
-            
+
             // 创建发票记录（如果需要开票）
-            if (request.getInvoice() != null && request.getInvoice().getInvoiceType() != null 
+            if (request.getInvoice() != null && request.getInvoice().getInvoiceType() != null
                 && request.getInvoice().getInvoiceType() > 0) {
                 WxInvoiceRequest invoiceReq = request.getInvoice();
                 OmsInvoice invoice = OmsInvoice.builder()
@@ -100,14 +106,36 @@ public class WxAppOrderController {
                         .build();
                 invoiceMapper.insert(invoice);
             }
-            
+
+            // 调用微信支付获取支付参数
+            String payInfo = "{}";
+            try {
+                String openId = request.getOpenId();
+                System.out.println("openId is ==="+openId);
+                if (openId != null && !openId.isEmpty()) {
+                    BigDecimal payAmount = BigDecimal.valueOf(createdOrder.getPayAmount()).divide(java.math.BigDecimal.valueOf(100));
+                    java.util.Map<String, String> payParams = wxPayService.createJsapiOrder(
+                        createdOrder.getOrderNo(),
+                        payAmount,
+                        openId,
+                        "订单支付"
+                    );
+                    payInfo = objectMapper.writeValueAsString(payParams);
+                }
+            } catch (Exception e) {
+                e.printStackTrace();
+                // 支付参数获取失败，仍然返回订单信息，用户可以稍后重新支付
+            }
+
+
             // 返回订单信息
             WxOrderSubmitResponse response = new WxOrderSubmitResponse();
             response.setOrderId(createdOrder.getOrderId());
             response.setOrderNo(createdOrder.getOrderNo());
             response.setPayAmount(createdOrder.getPayAmount());
             response.setStatus(createdOrder.getStatus());
-            
+            response.setPayInfo(payInfo);
+
             return DefaultResponse.success(response);
         } catch (Exception e) {
             e.printStackTrace();
@@ -125,7 +153,7 @@ public class WxAppOrderController {
                                 @RequestParam(defaultValue = "-1") Integer status) {
         try {
             List<OmsOrder> orders = orderService.getUserOrders(userId, status);
-            
+
             List<WxOrderListItem> result = orders.stream().map(order -> {
                 WxOrderListItem item = new WxOrderListItem();
                 item.setOrderId(order.getOrderId());
@@ -135,7 +163,7 @@ public class WxAppOrderController {
                 item.setPayAmount(order.getPayAmount());
                 item.setGoodsCount(order.getGoodsCount());
                 item.setCreatedTime(order.getCreatedTime().toString());
-                
+
                 // 商品列表
                 List<WxOrderGoodsVO> goodsList = new ArrayList<>();
                 if (order.getOrderItems() != null) {
@@ -152,10 +180,10 @@ public class WxAppOrderController {
                     }
                 }
                 item.setGoodsList(goodsList);
-                
+
                 return item;
             }).collect(Collectors.toList());
-            
+
             return DefaultResponse.success(result);
         } catch (Exception e) {
             e.printStackTrace();
@@ -173,7 +201,7 @@ public class WxAppOrderController {
             if (order == null) {
                 return DefaultResponse.error("订单不存在");
             }
-            
+
             return buildOrderDetailResponse(order);
         } catch (Exception e) {
             e.printStackTrace();
@@ -191,7 +219,7 @@ public class WxAppOrderController {
             if (order == null) {
                 return DefaultResponse.error("订单不存在");
             }
-            
+
             return buildOrderDetailResponse(order);
         } catch (Exception e) {
             e.printStackTrace();
@@ -209,7 +237,7 @@ public class WxAppOrderController {
         detail.setStatus(order.getStatus());
         detail.setStatusDesc(getStatusDesc(order.getStatus()));
         detail.setPayStatus(order.getPayStatus());
-        
+
         // 金额信息
         detail.setTotalAmount(order.getTotalAmount());
         detail.setFreightAmount(order.getFreightAmount());
@@ -217,24 +245,24 @@ public class WxAppOrderController {
         detail.setPromotionAmount(order.getPromotionAmount());
         detail.setPayAmount(order.getPayAmount());
         detail.setGoodsCount(order.getGoodsCount());
-        
+
         // 收货信息
         detail.setReceiverName(order.getReceiverName());
         detail.setReceiverPhone(order.getReceiverPhone());
         detail.setReceiverFullAddress(order.getReceiverFullAddress());
-        
+
         // 物流信息
         detail.setDeliveryCompany(order.getDeliveryCompany());
         detail.setDeliverySn(order.getDeliverySn());
-        
+
         // 时间信息
         detail.setCreatedTime(order.getCreatedTime() != null ? order.getCreatedTime().toString() : null);
         detail.setPayTime(order.getPayTime() != null ? order.getPayTime().toString() : null);
         detail.setDeliveryTime(order.getDeliveryTime() != null ? order.getDeliveryTime().toString() : null);
         detail.setReceiveTime(order.getReceiveTime() != null ? order.getReceiveTime().toString() : null);
-        
+
         detail.setRemark(order.getRemark());
-        
+
         // 查询发票信息（从独立的发票表）
         OmsInvoice invoice = invoiceMapper.selectByOrderId(order.getOrderId());
         if (invoice != null && invoice.getInvoiceType() != null && invoice.getInvoiceType() > 0) {
@@ -252,7 +280,7 @@ public class WxAppOrderController {
             invoiceVO.setInvoiceUrl(invoice.getInvoiceUrl());
             detail.setInvoiceVO(invoiceVO);
         }
-        
+
         // 商品列表
         List<WxOrderGoodsVO> goodsList = new ArrayList<>();
         if (order.getOrderItems() != null) {
@@ -270,7 +298,7 @@ public class WxAppOrderController {
             }
         }
         detail.setGoodsList(goodsList);
-        
+
         return DefaultResponse.success(detail);
     }
 
@@ -329,19 +357,76 @@ public class WxAppOrderController {
     }
 
     /**
+     * 重新发起支付（订单已创建但未支付，需要重新获取支付参数）
+     */
+    @PostMapping("/repay/{orderId}")
+    public String repayOrder(@PathVariable String orderId, @RequestBody Map<String, String> body) {
+        try {
+            // 获取订单信息
+            OmsOrder order = orderService.getOrderDetail(orderId);
+            if (order == null) {
+                return DefaultResponse.error("订单不存在");
+            }
+
+            // 检查订单状态，只有待付款状态才能重新支付
+            if (order.getStatus() != 0) {
+                return DefaultResponse.error("订单状态不允许支付");
+            }
+
+            // 获取openId
+            String openId = body.get("openId");
+            if (openId == null || openId.isEmpty()) {
+                return DefaultResponse.error("缺少openId参数");
+            }
+
+            // 调用微信支付获取支付参数
+            // 重新支付时，需要生成新的交易流水号，避免微信支付"请求重入参数不一致"的问题
+            // 格式：原订单号_时间戳后4位
+            String outTradeNo = order.getOrderNo() + "_" + (System.currentTimeMillis() % 10000);
+
+            String payInfo = "{}";
+            try {
+                java.math.BigDecimal payAmount = java.math.BigDecimal.valueOf(order.getPayAmount()).divide(java.math.BigDecimal.valueOf(100));
+                java.util.Map<String, String> payParams = wxPayService.createJsapiOrder(
+                    outTradeNo,
+                    payAmount,
+                    openId,
+                    "订单支付"
+                );
+                payInfo = objectMapper.writeValueAsString(payParams);
+            } catch (Exception e) {
+                e.printStackTrace();
+                return DefaultResponse.error("获取支付参数失败：" + e.getMessage());
+            }
+
+            // 返回支付参数
+            WxRepayResponse response = new WxRepayResponse();
+            response.setOrderId(order.getOrderId());
+            response.setOrderNo(order.getOrderNo());
+            response.setPayAmount(order.getPayAmount());
+            response.setPayInfo(payInfo);
+
+            return DefaultResponse.success(response);
+        } catch (Exception e) {
+            e.printStackTrace();
+            return DefaultResponse.error("发起支付失败：" + e.getMessage());
+        }
+    }
+
+    /**
      * 获取订单状态统计
      */
     @GetMapping("/count")
     public String getOrderCount(@RequestParam String userId) {
         try {
             Map<Integer, Long> countMap = orderService.getOrderCountByStatus(userId);
-            
+
             WxOrderCountVO vo = new WxOrderCountVO();
             vo.setToPay(countMap.getOrDefault(0, 0L));
             vo.setToDeliver(countMap.getOrDefault(1, 0L));
             vo.setToReceive(countMap.getOrDefault(2, 0L));
             vo.setCompleted(countMap.getOrDefault(3, 0L));
-            
+
             return DefaultResponse.success(vo);
         } catch (Exception e) {
             e.printStackTrace();
@@ -369,20 +454,12 @@ public class WxAppOrderController {
         return sb.toString();
     }
 
+
     /**
      * 获取订单状态描述
      */
     private String getStatusDesc(Integer status) {
-        if (status == null) return "未知";
-        return switch (status) {
-            case 0 -> "待付款";
-            case 1 -> "待发货";
-            case 2 -> "待收货";
-            case 3 -> "已完成";
-            case 4 -> "已取消";
-            case 5 -> "售后中";
-            default -> "未知";
-        };
+        return med.base.server.enums.OrderStatus.getDescByCode(status);
     }
 }
 
@@ -391,8 +468,9 @@ public class WxAppOrderController {
 @Data
 class WxOrderSubmitRequest {
     private String userId;
+    private String openId;   // 用户微信OpenID，用于发起支付
     private String storeId;
-    
+
     // 收货信息
     private String receiverName;
     private String receiverPhone;
@@ -400,13 +478,13 @@ class WxOrderSubmitRequest {
     private String receiverCity;
     private String receiverDistrict;
     private String receiverAddress;
-    
+
     // 订单备注
     private String remark;
-    
+
     // 发票信息
     private WxInvoiceRequest invoice;
-    
+
     // 商品列表
     private List<WxOrderGoodsItem> goodsList;
 }
@@ -415,22 +493,22 @@ class WxOrderSubmitRequest {
 class WxInvoiceRequest {
     // 发票类型：0-不开发票 5-电子普通发票
     private Integer invoiceType;
-    
+
     // 发票抬头类型：1-个人 2-公司
     private Integer titleType;
-    
+
     // 发票抬头（个人姓名或公司名称）
     private String buyerName;
-    
+
     // 纳税人识别号（公司开票必填）
     private String buyerTaxNo;
-    
+
     // 发票内容类型：1-商品明细 2-商品类别
     private Integer contentType;
-    
+
     // 发票接收邮箱
     private String email;
-    
+
     // 发票接收手机号（个人开票）
     private String buyerPhone;
 }
@@ -452,6 +530,7 @@ class WxOrderSubmitResponse {
     private String orderNo;
     private Long payAmount;
     private Integer status;
+    private String payInfo;  // 微信支付参数JSON
 }
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -475,7 +554,7 @@ class WxOrderDetailVO {
     private Integer status;
     private String statusDesc;
     private Integer payStatus;
-    
+
     // 金额
     private Long totalAmount;
     private Long freightAmount;
@@ -483,27 +562,27 @@ class WxOrderDetailVO {
     private Long promotionAmount;
     private Long payAmount;
     private Integer goodsCount;
-    
+
     // 收货信息
     private String receiverName;
     private String receiverPhone;
     private String receiverFullAddress;
-    
+
     // 物流
     private String deliveryCompany;
     private String deliverySn;
-    
+
     // 时间
     private String createdTime;
     private String payTime;
     private String deliveryTime;
     private String receiveTime;
-    
+
     private String remark;
-    
+
     // 发票信息
     private WxInvoiceVO invoiceVO;
-    
+
     private List<WxOrderGoodsVO> goodsList;
 }
 
@@ -542,4 +621,12 @@ class WxOrderCountVO {
     private Long toDeliver;   // 待发货
     private Long toReceive;   // 待收货
     private Long completed;   // 已完成
+}
+
+@Data
+class WxRepayResponse {
+    private String orderId;
+    private String orderNo;
+    private Long payAmount;
+    private String payInfo;  // 微信支付参数JSON
 }

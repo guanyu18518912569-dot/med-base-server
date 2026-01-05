@@ -1,0 +1,42 @@
+# EditorConfig is awesome: https://EditorConfig.org
+
+# top-most EditorConfig file
+root = true
+
+# 所有文件
+[*]
+charset = utf-8
+end_of_line = lf
+insert_final_newline = true
+trim_trailing_whitespace = true
+
+# Java 文件
+[*.java]
+charset = utf-8
+indent_style = space
+indent_size = 4
+
+# XML 文件
+[*.xml]
+charset = utf-8
+indent_style = space
+indent_size = 4
+
+# Properties 文件
+[*.properties]
+charset = utf-8
+
+# YAML 文件
+[*.{yml,yaml}]
+charset = utf-8
+indent_style = space
+indent_size = 2
+
+# Markdown 文件
+[*.md]
+charset = utf-8
+trim_trailing_whitespace = false
+
+# SQL 文件
+[*.sql]
+charset = utf-8

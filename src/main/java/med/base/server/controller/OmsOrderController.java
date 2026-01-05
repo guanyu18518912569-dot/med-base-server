@@ -45,11 +45,11 @@ public class OmsOrderController {
             @RequestParam(required = false) Integer status,
             @RequestParam(required = false) String receiverName,
             @RequestParam(required = false) String receiverPhone) {
-        
+
         try {
             LambdaQueryWrapper<OmsOrder> wrapper = new LambdaQueryWrapper<>();
             wrapper.eq(OmsOrder::getDeleted, 0);
-            
+
             if (StringUtils.hasText(orderNo)) {
                 wrapper.like(OmsOrder::getOrderNo, orderNo);
             }
@@ -62,12 +62,12 @@ public class OmsOrderController {
             if (StringUtils.hasText(receiverPhone)) {
                 wrapper.like(OmsOrder::getReceiverPhone, receiverPhone);
             }
-            
+
             wrapper.orderByDesc(OmsOrder::getCreatedTime);
-            
+
             Page<OmsOrder> page = new Page<>(pageNum, pageSize);
             IPage<OmsOrder> result = orderService.page(page, wrapper);
-            
+
             // 转换为 VO
             List<OrderListVO> voList = result.getRecords().stream().map(order -> {
                 OrderListVO vo = new OrderListVO();
@@ -92,7 +92,7 @@ public class OmsOrderController {
                 vo.setPayTime(order.getPayTime());
                 vo.setDeliveryTime(order.getDeliveryTime());
                 vo.setReceiveTime(order.getReceiveTime());
-                
+
                 // 加载订单商品
                 List<OmsOrderItem> items = orderItemMapper.selectByOrderId(order.getOrderId());
                 List<OrderItemVO> itemVOs = items.stream().map(item -> {
@@ -109,17 +109,17 @@ public class OmsOrderController {
                     return itemVO;
                 }).collect(Collectors.toList());
                 vo.setOrderItems(itemVOs);
-                
+
                 return vo;
             }).collect(Collectors.toList());
-            
+
             Map<String, Object> data = new HashMap<>();
             data.put("list", voList);
             data.put("total", result.getTotal());
             data.put("pageNum", result.getCurrent());
             data.put("pageSize", result.getSize());
             data.put("pages", result.getPages());
-            
+
             return DefaultResponse.success(data);
         } catch (Exception e) {
             e.printStackTrace();
@@ -138,7 +138,7 @@ public class OmsOrderController {
             if (order == null) {
                 return DefaultResponse.error("订单不存在");
             }
-            
+
             OrderListVO vo = convertToVO(order);
             return DefaultResponse.success(vo);
         } catch (Exception e) {
@@ -157,12 +157,12 @@ public class OmsOrderController {
             if (!StringUtils.hasText(request.getOrderId())) {
                 return DefaultResponse.error("订单ID不能为空");
             }
-            
+
             boolean success = orderService.deliverOrder(
                     request.getOrderId(),
                     request.getDeliveryCompany(),
                     request.getDeliverySn());
-            
+
             if (success) {
                 return DefaultResponse.success();
             } else {
@@ -183,9 +183,9 @@ public class OmsOrderController {
         try {
             LambdaQueryWrapper<OmsOrder> wrapper = new LambdaQueryWrapper<>();
             wrapper.eq(OmsOrder::getDeleted, 0);
-            
+
             long totalCount = orderService.count(wrapper);
-            
+
             // 各状态订单数量
             Map<String, Long> statusCount = new HashMap<>();
             for (int i = 0; i <= 5; i++) {
@@ -194,11 +194,11 @@ public class OmsOrderController {
                 statusWrapper.eq(OmsOrder::getStatus, i);
                 statusCount.put(getStatusDesc(i), orderService.count(statusWrapper));
             }
-            
+
             Map<String, Object> data = new HashMap<>();
             data.put("totalCount", totalCount);
             data.put("statusCount", statusCount);
-            
+
             return DefaultResponse.success(data);
         } catch (Exception e) {
             e.printStackTrace();
@@ -206,17 +206,9 @@ public class OmsOrderController {
         }
     }
 
+
     private String getStatusDesc(Integer status) {
-        if (status == null) return "未知";
-        return switch (status) {
-            case 0 -> "待付款";
-            case 1 -> "待发货";
-            case 2 -> "待收货";
-            case 3 -> "已完成";
-            case 4 -> "已取消";
-            case 5 -> "售后中";
-            default -> "未知";
-        };
+        return med.base.server.enums.OrderStatus.getDescByCode(status);
     }
 
     private OrderListVO convertToVO(OmsOrder order) {
@@ -242,7 +234,7 @@ public class OmsOrderController {
         vo.setPayTime(order.getPayTime());
         vo.setDeliveryTime(order.getDeliveryTime());
         vo.setReceiveTime(order.getReceiveTime());
-        
+
         if (order.getOrderItems() != null) {
             List<OrderItemVO> itemVOs = order.getOrderItems().stream().map(item -> {
                 OrderItemVO itemVO = new OrderItemVO();
@@ -259,7 +251,7 @@ public class OmsOrderController {
             }).collect(Collectors.toList());
             vo.setOrderItems(itemVOs);
         }
-        
+
         return vo;
     }
 }

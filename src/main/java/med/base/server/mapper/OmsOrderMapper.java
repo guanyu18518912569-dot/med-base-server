@@ -41,6 +41,12 @@ public interface OmsOrderMapper extends BaseMapper<OmsOrder> {
     int updatePayStatus(@Param("orderId") String orderId, @Param("payStatus") Integer payStatus);
 
     /**
+     * 根据订单编号更新支付状态（微信支付回调使用）
+     */
+    @Update("UPDATE oms_order SET pay_status = 1, pay_time = NOW(), status = 1, transaction_id = #{transactionId}, updated_time = NOW() WHERE order_no = #{orderNo} AND status = 0")
+    int updatePayStatusByOrderNo(@Param("orderNo") String orderNo, @Param("transactionId") String transactionId);
+
+    /**
      * 取消订单
      */
     @Update("UPDATE oms_order SET status = 4, cancel_time = NOW(), updated_time = NOW() WHERE order_id = #{orderId} AND status = 0")

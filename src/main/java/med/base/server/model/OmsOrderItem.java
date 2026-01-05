@@ -7,7 +7,7 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.io.Serial;
+
 import java.io.Serializable;
 import java.time.LocalDateTime;
 
@@ -21,7 +21,6 @@ import java.time.LocalDateTime;
 @TableName("oms_order_item")
 public class OmsOrderItem implements Serializable {
 
-    @Serial
     private static final long serialVersionUID = -3491364576174962458L;
     
     @TableId

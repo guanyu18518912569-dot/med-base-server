@@ -1,12 +1,13 @@
 package med.base.server.model;
 
+import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableId;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.io.Serial;
+
 import java.io.Serializable;
 import java.math.BigDecimal;
 
@@ -15,10 +16,9 @@ import java.math.BigDecimal;
 @NoArgsConstructor
 @AllArgsConstructor
 public class PmsCategory implements Serializable {
-    @Serial
     private static final long serialVersionUID = -2996487306685152458L;
 
-    @TableId
+    @TableId(type = IdType.AUTO)
     private Integer categoryId;
     private int parentId;
     private String categoryName;

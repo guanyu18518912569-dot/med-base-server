@@ -1,5 +1,6 @@
 package med.base.server.controller;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -256,6 +257,26 @@ public class PmsSpuController {
     }
 
     /**
+     * 更新商品状态（上架/下架）
+     */
+    @PostMapping(value = "statusUpdate")
+    @UserLoginToken
+    public String statusUpdate(@RequestBody StatusUpdateRequest request) {
+        try {
+            if (request == null || request.getSpuId() == null || request.getSpuId().trim().isEmpty()) {
+                return DefaultResponse.error("商品ID不能为空");
+            }
+            if (request.getStatus() != 0 && request.getStatus() != 1) {
+                return DefaultResponse.error("状态值不合法");
+            }
+            pmsService.updateSpuStatus(request.getSpuId(), request.getStatus());
+            return DefaultResponse.success();
+        } catch (Exception e) {
+            return DefaultResponse.error("更新商品状态失败: " + e.getMessage());
+        }
+    }
+
+    /**
      * 更新商品 SPU 及其 SKU 列表
      */
     @PostMapping(value = "spuUpdate")
@@ -352,6 +373,7 @@ public class PmsSpuController {
         spu.setPicUrls(spuModel.getPicUrls());
         spu.setVideoUrl(spuModel.getVideoUrl());
         spu.setMainImage(spuModel.getMainImageUrl());
+        spu.setInviteIncomeRatio(spuModel.getInviteIncomeRatio()); //inviteIncomeRatio
 
         // 设置 SKU 列表数据
         if (spuModel.getSkuList() != null && !spuModel.getSkuList().isEmpty()) {
@@ -438,6 +460,7 @@ class SpuModelVo {
 }
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
+@JsonIgnoreProperties(ignoreUnknown = true)
 @Data
 class SkuListVo {
 
@@ -458,4 +481,10 @@ class SpecVo {
     private String specKeyName;
     private String specValueId;
     private String specValueName;
+}
+
+@Data
+class StatusUpdateRequest {
+    private String spuId;
+    private int status;
 }
